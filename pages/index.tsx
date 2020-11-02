@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <title>Cezar Neaga - Simplify, Create, Amaze</title>
+        <link rel="icon" href="images/favicon.ico" />
       </Head>
 
       <main>

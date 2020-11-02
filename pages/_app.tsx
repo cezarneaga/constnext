@@ -1,7 +1,12 @@
 import type { AppProps /*, AppContext */ } from 'next/app'
-
+import { ChakraProvider } from '@chakra-ui/core'
+import { customTheme } from 'components/theme'
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ChakraProvider theme={customTheme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Box, Flex, Text } from '@chakra-ui/core'
 import { Project } from '../lib/api'
-
+import { InternalLink as Link } from 'components/internal-link'
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <Box p="5" maxW="320px" borderWidth="1px" key={project.slug}>
@@ -24,9 +24,14 @@ export function ProjectCard({ project }: { project: Project }) {
           </Text>
         ))}
       </Flex>
-      <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
+      <Link
+        href={`/projects/${project.slug}`}
+        mt={2}
+        fontSize="xl"
+        fontWeight="semibold"
+        lineHeight="short">
         {project.title}
-      </Text>
+      </Link>
     </Box>
   )
 }

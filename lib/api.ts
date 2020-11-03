@@ -1,5 +1,5 @@
-import { createClient } from 'contentful'
-import { IProjectFields } from 'types/generated/contentful'
+import { createClient, EntryCollection } from 'contentful'
+import { IProject, IProjectFields } from 'types/generated/contentful'
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID!,
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
@@ -39,7 +39,7 @@ function parseProject({
 }): Project {
   return {
     title: fields.title,
-    type: fields.type,
+    type: fields.type || [],
     slug: fields.slug,
     description: fields.description,
     image: {
@@ -47,10 +47,10 @@ function parseProject({
       alt: fields.image.fields.title,
     },
     mozaic: fields?.mozaic?.map((m) => {
-      return { url: m.fields.file.url, alt: m.fields.title }
+      return { url: m.fields?.file?.url || '', alt: m.fields?.title || '' }
     }),
     stack: fields.stack,
-    details: fields.details,
+    details: fields.details || [],
     createdAt: sys.createdAt,
     updatedAt: sys.updatedAt,
   }
@@ -61,7 +61,7 @@ function parseProjectEntries(entries: any, cb = parseProject) {
 }
 
 export async function getPreviewProjectBySlug(slug: string | string[]) {
-  const entries = await getClient(true).getEntries({
+  const entries: EntryCollection<IProject> = await getClient(true).getEntries({
     'content_type': 'project',
     'limit': 1,
     'fields.slug[in]': slug,
@@ -87,8 +87,9 @@ export async function getAllProjectsForHome(preview: boolean) {
 
 export async function getProjectAndMoreProjects(
   slug: string,
+  limit: number,
   preview: boolean
-) {
+): Promise<{ project: Project; moreProjects: Project[] }> {
   const entry = await getClient(preview).getEntries({
     'content_type': 'project',
     'limit': 1,
@@ -96,8 +97,8 @@ export async function getProjectAndMoreProjects(
   })
   const entries = await getClient(preview).getEntries({
     'content_type': 'project',
-    'limit': 2,
-    'order': '-fields.date',
+    'limit': limit || 2,
+    // 'order': 'fields.createdAt',
     'fields.slug[nin]': slug,
   })
 

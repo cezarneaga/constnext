@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { getAllProjectsForHome, Project } from '../lib/api'
 import Layout from 'components/layout'
+import { ProjectCard } from 'components/project-card'
 
 export default function Home({
   preview,
@@ -17,7 +18,7 @@ export default function Home({
           <link rel="icon" href="images/favicon.ico" />
         </Head>
         {allProjects.map((project) => (
-          <div key={project.slug}>{project.title}</div>
+          <ProjectCard project={project} key={project.slug} />
         ))}
       </>
     </Layout>

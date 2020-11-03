@@ -1,31 +1,32 @@
 import Head from 'next/head'
+import { getAllProjectsForHome, Project } from '../lib/api'
+import Layout from 'components/layout'
 
-export default function Home() {
+export default function Home({
+  preview,
+  allProjects,
+}: {
+  preview: boolean
+  allProjects: Project[]
+}) {
   return (
-    <div>
-      <Head>
-        <title>Cezar Neaga - Simplify, Create, Amaze</title>
-        <link rel="icon" href="images/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
-
-      <footer>
-        <a
-          href="https://cezarneaga.eu"
-          target="_blank"
-          rel="noopener noreferrer">
-          Powered by next
-        </a>
-      </footer>
-    </div>
+    <Layout preview={preview}>
+      <>
+        <Head>
+          <title>Cezar Neaga - Simplify, Create, Amaze</title>
+          <link rel="icon" href="images/favicon.ico" />
+        </Head>
+        {allProjects.map((project) => (
+          <div key={project.slug}>{project.title}</div>
+        ))}
+      </>
+    </Layout>
   )
+}
+
+export async function getStaticProps({ preview = false }) {
+  const allProjects = await getAllProjectsForHome(preview)
+  return {
+    props: { preview, allProjects },
+  }
 }

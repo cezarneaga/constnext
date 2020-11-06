@@ -5,6 +5,9 @@ const colors = {
     800: '#153e75',
     700: '#2a69ac',
   },
+  gray: {
+    900: '#353740',
+  },
 }
 
 export const customTheme = extendTheme({ colors })

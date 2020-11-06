@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import { Box, Flex, Text } from '@chakra-ui/core'
-import { Project } from '../lib/api'
+import { Project } from '../lib/contentTypes'
 import { InternalLink as Link } from 'components/internal-link'
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <Box p="5" maxW="320px" borderWidth="1px" key={project.slug}>
       <Image
-        src={`https:${project.image.url}`}
-        alt={project.image.alt}
+        src={project.image.url}
+        alt={project.image.description}
         width={500}
         height={500}
       />

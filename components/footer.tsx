@@ -1,7 +1,8 @@
 import { Box, Flex, Grid, Text } from '@chakra-ui/core'
 import { Follow } from 'components/follow'
 import { InternalLink } from 'components/internal-link'
-export function Footer() {
+import { Alert } from 'components/alert'
+export function Footer({ preview }: { preview: boolean }) {
   const year = new Date().getFullYear()
   return (
     <Box backgroundColor="gray.900" height="100%">
@@ -24,6 +25,9 @@ export function Footer() {
           <InternalLink href="/imprint" color="gray.400">
             Imprint
           </InternalLink>
+          {process.env.NODE_ENV === 'development' && (
+            <Alert preview={preview} />
+          )}
         </Flex>
       </Grid>
     </Box>

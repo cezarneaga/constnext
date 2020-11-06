@@ -40,8 +40,7 @@ export default function Layout({
         {children}
       </Box>
       <Box as="footer" gridArea="footer">
-        <Footer />
-        {/* <Alert preview={preview} /> */}
+        <Footer preview={preview} />
       </Box>
     </Grid>
   )

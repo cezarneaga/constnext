@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Box, Flex } from '@chakra-ui/core'
-import { Project } from 'lib/api'
+import { Project } from 'lib/contentTypes'
 import { ProjectCard } from 'components/project-card'
 
 export function ProjectsList({ projects }: { projects: Project[] }) {

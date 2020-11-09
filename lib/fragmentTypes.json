@@ -1,0 +1,1 @@
+{"__schema":{"types":[{"kind":"INTERFACE","name":"Entry","possibleTypes":[{"name":"Project"},{"name":"Features"},{"name":"Page"},{"name":"BlogPost"},{"name":"Person"}]}]}}

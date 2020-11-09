@@ -1,5 +1,6 @@
+import { fetchContent } from 'lib/fetchContent'
+import { operationsDoc } from 'lib/queries'
 import { NextApiRequest, NextApiResponse } from 'next'
-import { getPreviewProjectBySlug } from '../../lib/api'
 
 export default async function preview(
   req: NextApiRequest,
@@ -11,21 +12,20 @@ export default async function preview(
     return res.status(401).json({ message: 'Invalid token' })
   }
 
-  // Fetch the headless CMS to check if the provided `slug` exists
-  const post = await getPreviewProjectBySlug(slug)
+  const projects = await fetchContent(operationsDoc, 'ProjectBySlug', { slug })
 
   // If the slug doesn't exist prevent preview mode from being enabled
-  if (!post) {
+  if (!projects) {
     return res.status(401).json({ message: 'Invalid slug' })
   }
 
   // Enable Preview Mode by setting the cookies
   res.setPreviewData({})
 
-  // Redirect to the path from the fetched post
+  // Redirect to the path from the fetched projects
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
-  // res.writeHead(307, { Location: `/posts/${post.slug}` })
-  const url = `/projects/${post.slug}`
+  // res.writeHead(307, { Location: `/projectss/${projects.slug}` })
+  const url = `/projects/${projects.slug}`
   res.write(
     `<!DOCTYPE html><html><head><meta http-equiv="Refresh" content="0; url=${url}" />
     <script>window.location.href = '${url}'</script>

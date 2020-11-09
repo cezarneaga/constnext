@@ -1,16 +1,11 @@
 import Head from 'next/head'
-import { fetchContent } from '../lib/fetchContent'
+import { operationsDoc } from '../lib/queries'
 import { Project } from '../lib/contentTypes'
 import Layout from 'components/layout'
 import { ProjectCard } from 'components/project-card'
-
-export default function Home({
-  preview,
-  allProjects,
-}: {
-  preview: boolean
-  allProjects: Project[]
-}) {
+const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID
+const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN
+function Home({ preview, items }: { preview: boolean; items: Project[] }) {
   return (
     <Layout preview={preview}>
       <>
@@ -18,7 +13,7 @@ export default function Home({
           <title>Cezar Neaga - Simplify, Create, Amaze</title>
           <link rel="icon" href="images/favicon.ico" />
         </Head>
-        {allProjects.map((project) => (
+        {items.map((project) => (
           <ProjectCard project={project} key={project.slug} />
         ))}
       </>
@@ -27,33 +22,39 @@ export default function Home({
 }
 
 export async function getStaticProps({ preview = false }) {
-  const query = `
+  const result = await fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${space}`,
     {
-      projectCollection(limit: 3) {
-        items {
-          sys{
-            id
-            publishedAt
-          }
-          title
-          slug
-          stack
-          image {
-            url
-            fileName
-            description
-            width
-            height
-          }
-        }
-      }
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({
+        query: operationsDoc,
+        variables: {
+          limit: 3,
+          preview,
+        },
+        operationName: 'projectList',
+      }),
     }
-  `
-  const { projectCollection } = await fetchContent(query)
+  )
+  const json = await result.json()
+
+  if (!!json.errors) {
+    console.warn(
+      `Errors in GraphQL for "projectList":`,
+      json.errors.map((m: any) => m.message)
+    )
+  }
+
+  const { projectCollection } = json.data
   return {
     props: {
       preview,
-      allProjects: projectCollection.items,
+      items: projectCollection.items,
     },
   }
 }
+export default Home

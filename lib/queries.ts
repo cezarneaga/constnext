@@ -65,11 +65,10 @@ export const operationsDoc = `
       }
     }
   }
-  query MoreProjects($slug: String!, $preview: Boolean!, $limit: Int!) {
+  query MoreProjects($slug: String!, $limit: Int!) {
     projectCollection(
       where: { slug_not_in: [$slug] }
       order: sys_publishedAt_DESC
-      preview: $preview
       limit: $limit
     ) {
       items {

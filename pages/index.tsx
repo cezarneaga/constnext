@@ -36,7 +36,7 @@ export async function getStaticProps({ preview = false }) {
           limit: 3,
           preview,
         },
-        operationName: 'projectList',
+        operationName: 'ProjectList',
       }),
     }
   )
@@ -49,7 +49,7 @@ export async function getStaticProps({ preview = false }) {
     )
   }
 
-  const { projectCollection } = json.data
+  const projectCollection = json.data.projectCollection
   return {
     props: {
       preview,

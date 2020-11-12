@@ -33,7 +33,8 @@ export function Navigation() {
       alignItems="center"
       maxWidth="1280px"
       mx="auto"
-      height={'60px'}
+      height={show ? '100%' : '60px'}
+      bgColor={show ? bgColor : ''}
       py={'10px'}
       align="center"
       justify="space-between"
@@ -61,23 +62,22 @@ export function Navigation() {
       <Box
         display={[show ? 'block' : 'none', show ? 'block' : 'none', 'flex']}
         height={[show ? '100vh' : 'none', show ? '100vh' : 'none', 'flex']}
-        bgColor={show ? bgColor : ''}
         alignItems="center"
         textAlign="right"
         width={['full', 'full', 'auto']}>
         <InternalLink
-          my={[20, 20, 0]}
+          my={[20, 12, 0]}
           ml={6}
-          fontSize={['4xl', 'md', 'md', 'md']}
+          fontSize={['4xl', '2xl', 'md', 'md']}
           fontWeight="semibold"
           display="block"
           href="/projects">
           Projects
         </InternalLink>
         <InternalLink
-          my={[20, 20, 0]}
+          my={[20, 12, 0]}
           ml={6}
-          fontSize={['4xl', 'md', 'md', 'md']}
+          fontSize={['4xl', '2xl', 'md', 'md']}
           fontWeight="semibold"
           display="block"
           href="/about">
@@ -87,7 +87,10 @@ export function Navigation() {
           ml={6}
           aria-label="Switch color mode"
           float={[show ? 'right' : 'none', show ? 'right' : 'none']}
-          onClick={toggleColorMode}
+          onClick={() => {
+            handleToggle()
+            toggleColorMode()
+          }}
           icon={<SwitchIcon />}
         />
       </Box>

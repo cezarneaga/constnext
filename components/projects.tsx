@@ -21,13 +21,11 @@ export function Projects({ projects, cols }: Props) {
       width="100%"
       height="auto"
       m="0"
+      px="4"
       alignItems="stretch"
       overflow="hidden"
       backgroundColor={bgColor}>
-      <Box
-        width="100%"
-        py="8"
-        px={['4', '4', '4', 'calc(((100% - 1280px) / 2) + 1rem)']}>
+      <Box width="100%" py="8" maxW="1280px" mx="auto">
         <Heading
           size="xl"
           textTransform="uppercase"

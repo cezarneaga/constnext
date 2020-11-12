@@ -8,7 +8,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <Flex
       key={project.slug}
       position="relative"
-      minH={['281px', '220px', '260px', '320px']}
+      minH={['281px', '220px', '220px', '320px']}
       role="group">
       <InternalLink
         href={`/projects/${project.slug}`}

@@ -15,6 +15,7 @@ export function Hero({ title, description, actionLink }: Props) {
       width="100%"
       height="410px"
       m="0"
+      px="4"
       alignItems="stretch"
       overflow="hidden"
       backgroundColor={bgColor}
@@ -25,8 +26,7 @@ export function Hero({ title, description, actionLink }: Props) {
       <Box
         width={['100%', '100%', '50%', '50%']}
         py="12"
-        pl={['4', '4', '4', 'calc(((100% - 1280px) / 2) + 1rem)']}
-        pr="4">
+        pl={['0', '0', '0', 'calc((100% - 1280px) / 2)']}>
         <NewlineText text={title} />
 
         <Heading

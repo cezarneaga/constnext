@@ -1,13 +1,7 @@
 import { extendTheme } from '@chakra-ui/core'
-import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 // Then add your custom breakpoints as key-value pairs
-const breakpoints = createBreakpoints({
-  sm: '30em',
-  md: '48em',
-  lg: '62em',
-  xl: '80em',
-})
+const breakpoints = ['30em', '48em', '64em', '80em']
 const colors = {
   brand: {
     900: '#1a365d',

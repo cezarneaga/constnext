@@ -25,12 +25,7 @@ export function Hero({ title, description, actionLink }: Props) {
       <Box
         width={['100%', '100%', '50%', '50%']}
         py="12"
-        pl={{
-          sm: '4',
-          md: '4',
-          lg: '4',
-          xl: 'calc(((100% - 1280px) / 2) + 1rem)',
-        }}
+        pl={['4', '4', '4', 'calc(((100% - 1280px) / 2) + 1rem)']}
         pr="4">
         <NewlineText text={title} />
 

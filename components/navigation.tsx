@@ -1,10 +1,8 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import {
-  Heading,
   Flex,
   Box,
-  Text,
   IconButton,
   useColorMode,
   useColorModeValue,
@@ -13,7 +11,6 @@ import {
 import { InternalLink } from 'components/internal-link'
 import Image from 'next/image'
 import { Menu, Moon, Sun, X } from 'react-feather'
-import { useHasScrolledDown } from 'lib/useHasScrolledDown'
 
 export function Navigation() {
   const router = useRouter()
@@ -22,7 +19,7 @@ export function Navigation() {
   const handleToggle = () => setShow(!show)
   const { toggleColorMode } = useColorMode()
   const SwitchIcon = useColorModeValue(Moon, Sun)
-
+  const bgColor = useColorModeValue('white', 'gray.800')
   const color = useColorModeValue('brand.900', 'brand.100')
 
   // when active route changes, we probably clicked on a nav link
@@ -31,14 +28,13 @@ export function Navigation() {
     setShow(false)
   }, [activeRoute])
 
-  const hasScrolledDown = useHasScrolledDown()
   return (
     <Flex
       alignItems="center"
       maxWidth="1280px"
       mx="auto"
-      height={show ? 'auto' : '60px'}
-      py={show ? '10px' : '0'}
+      height={'60px'}
+      py={'10px'}
       align="center"
       justify="space-between"
       px="4"
@@ -64,20 +60,24 @@ export function Navigation() {
       </Box>
       <Box
         display={[show ? 'block' : 'none', show ? 'block' : 'none', 'flex']}
+        height={[show ? '100vh' : 'none', show ? '100vh' : 'none', 'flex']}
+        bgColor={show ? bgColor : ''}
         alignItems="center"
         textAlign="right"
         width={['full', 'full', 'auto']}>
         <InternalLink
-          my={[2, 2, 0]}
+          my={[20, 20, 0]}
           ml={6}
+          fontSize={['4xl', 'md', 'md', 'md']}
           fontWeight="semibold"
           display="block"
           href="/projects">
           Projects
         </InternalLink>
         <InternalLink
-          my={[2, 2, 0]}
+          my={[20, 20, 0]}
           ml={6}
+          fontSize={['4xl', 'md', 'md', 'md']}
           fontWeight="semibold"
           display="block"
           href="/about">

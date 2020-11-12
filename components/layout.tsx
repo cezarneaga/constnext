@@ -25,7 +25,7 @@ export default function Layout({
   return (
     <Grid
       gap="0"
-      templateRows="auto auto 150px"
+      templateRows="auto auto 110px"
       templateAreas="'navi' 'main' 'footer'">
       <Box
         as="nav"

@@ -1,7 +1,7 @@
+import { Info } from 'react-feather'
 import { Box, Button, Flex, Heading, useColorModeValue } from '@chakra-ui/core'
 import { InternalLink } from 'components/internal-link'
 import { NewlineText } from 'components/new-line'
-import { Info } from 'react-feather'
 type Props = {
   title: string
   description: string

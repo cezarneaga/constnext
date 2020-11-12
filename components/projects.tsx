@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/core'
 import { ProjectCard } from 'components/project-card'
 import { Project } from '../lib/contentTypes'
-import { InternalLink } from './internal-link'
+import { InternalLink } from 'components/internal-link'
 type Props = {
   projects: Project[]
   cols: number

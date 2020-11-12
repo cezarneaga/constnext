@@ -1,4 +1,3 @@
-import React from 'react'
 import { Compass, Code as CodeIcon, Server } from 'react-feather'
 import { Heading, Link, Code, Grid, Flex, Box, useTheme } from '@chakra-ui/core'
 export function Services() {

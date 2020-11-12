@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import { Box, Flex } from '@chakra-ui/core'
+import { Flex } from '@chakra-ui/core'
 import { Project } from 'lib/contentTypes'
 import { ProjectCard } from 'components/project-card'
 

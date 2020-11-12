@@ -4,9 +4,15 @@ import { Project } from '../lib/contentTypes'
 import Layout from 'components/layout'
 import { Hero } from 'components/hero'
 import { Services } from 'components/services'
-import { ProjectCard } from 'components/project-card'
+import { Projects } from 'components/projects'
 
-function Home({ preview, items }: { preview: boolean; items: Project[] }) {
+function Home({
+  preview,
+  projects,
+}: {
+  preview: boolean
+  projects: Project[]
+}) {
   return (
     <Layout preview={preview}>
       <>
@@ -20,20 +26,18 @@ function Home({ preview, items }: { preview: boolean; items: Project[] }) {
           actionLink="/about"
         />
         <Services />
-        {items.map((project) => (
-          <ProjectCard project={project} key={project.slug} />
-        ))}
+        <Projects projects={projects} cols={3} />
       </>
     </Layout>
   )
 }
 
 export async function getStaticProps({ preview = false }) {
-  const items = await getProjects(3, preview)
+  const projects = await getProjects(3, preview)
   return {
     props: {
       preview,
-      items,
+      projects,
     },
   }
 }

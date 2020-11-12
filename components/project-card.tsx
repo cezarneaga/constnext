@@ -1,37 +1,55 @@
 import Image from 'next/image'
-import { Box, Flex, Text } from '@chakra-ui/core'
+import { ArrowRightCircle } from 'react-feather'
+import { Box, Flex, Heading } from '@chakra-ui/core'
 import { Project } from '../lib/contentTypes'
-import { InternalLink as Link } from 'components/internal-link'
+import { InternalLink } from 'components/internal-link'
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Box p="5" maxW="320px" borderWidth="1px" key={project.slug}>
-      <Image
-        src={project.image.url}
-        alt={project.image.description}
-        width={500}
-        height={500}
-      />
-      <Flex align="baseline" mt={2}>
-        {project.stack.map((stack) => (
-          <Text
-            ml={2}
-            textTransform="uppercase"
-            fontSize="sm"
-            fontWeight="bold"
-            color="pink.800"
-            key={stack}>
-            {stack}
-          </Text>
-        ))}
-      </Flex>
-      <Link
+    <Flex
+      key={project.slug}
+      position="relative"
+      minH={['281px', '220px', '281px']}
+      role="group">
+      <InternalLink
         href={`/projects/${project.slug}`}
-        mt={2}
-        fontSize="xl"
-        fontWeight="semibold"
-        lineHeight="short">
-        {project.title}
-      </Link>
-    </Box>
+        height="100%"
+        flex="1"
+        title={project.title}
+        position="relative">
+        <Image
+          src={project.image.url}
+          alt={project.image.description}
+          layout="fill"
+        />
+        <Flex
+          position="absolute"
+          top="0"
+          left="0"
+          alignItems="center"
+          flexDirection="column"
+          justifyContent="center"
+          background="rgba(105, 154, 207, 0.75)"
+          text-align="center"
+          height="100%"
+          width="100%"
+          opacity="0"
+          transition="opacity 0.25s ease"
+          _groupHover={{ opacity: 1 }}>
+          <ArrowRightCircle
+            color="#fff"
+            size={50}
+            style={{ margin: '10px 0' }}
+          />
+          <Heading
+            fontSize={['20px', '20px', '28px', '28px']}
+            textTransform="uppercase"
+            // marginBottom={30}
+            center
+            color="#fff">
+            {project.title}
+          </Heading>
+        </Flex>
+      </InternalLink>
+    </Flex>
   )
 }

@@ -17,7 +17,6 @@ function Home({ preview, items }: { preview: boolean; items: Project[] }) {
           title={`Simplify,\nCreate & Amaze`}
           description="Professional web & app development for people and organisations that have a positive impact in the society."
           actionLink="/about"
-          position="top"
         />
         {items.map((project) => (
           <ProjectCard project={project} key={project.slug} />

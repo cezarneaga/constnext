@@ -2,7 +2,9 @@ import Head from 'next/head'
 import { getProjects } from '../lib/api'
 import { Project } from '../lib/contentTypes'
 import Layout from 'components/layout'
+import { Hero } from 'components/hero'
 import { ProjectCard } from 'components/project-card'
+
 function Home({ preview, items }: { preview: boolean; items: Project[] }) {
   return (
     <Layout preview={preview}>
@@ -11,6 +13,12 @@ function Home({ preview, items }: { preview: boolean; items: Project[] }) {
           <title>Cezar Neaga - Simplify, Create, Amaze</title>
           <link rel="icon" href="images/favicon.ico" />
         </Head>
+        <Hero
+          title={`Simplify,\nCreate & Amaze`}
+          description="Professional web & app development for people and organisations that have a positive impact in the society."
+          actionLink="/about"
+          position="top"
+        />
         {items.map((project) => (
           <ProjectCard project={project} key={project.slug} />
         ))}

@@ -3,12 +3,24 @@ import { ArrowRightCircle } from 'react-feather'
 import { Flex, Heading } from '@chakra-ui/core'
 import { Project } from '../lib/contentTypes'
 import { InternalLink } from 'components/internal-link'
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({
+  project,
+  cols,
+}: {
+  project: Project
+  cols: number
+}) {
+  const base = 320 * 0.8
+  const sm = 320 * 0.8
+  const md = ((768 - 16 * (cols - 1)) / cols) * 0.8
+  const lg = ((1024 - 16 * (cols - 1)) / cols) * 0.8
+  const xl = ((1280 - 16 * (cols - 1)) / cols) * 0.8
   return (
     <Flex
       key={project.slug}
       position="relative"
-      minH={['281px', '220px', '220px', '320px']}
+      height="100%"
+      minH={[base, sm, md, lg, xl]}
       role="group">
       <InternalLink
         href={`/projects/${project.slug}`}
@@ -43,8 +55,6 @@ export function ProjectCard({ project }: { project: Project }) {
           <Heading
             fontSize={['20px', '20px', '28px', '28px']}
             textTransform="uppercase"
-            // marginBottom={30}
-            center
             color="#fff">
             {project.title}
           </Heading>

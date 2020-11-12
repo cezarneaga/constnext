@@ -1,7 +1,4 @@
 import { extendTheme } from '@chakra-ui/core'
-
-// Then add your custom breakpoints as key-value pairs
-const breakpoints = ['30em', '48em', '64em', '80em']
 const colors = {
   brand: {
     900: '#1a365d',
@@ -29,4 +26,4 @@ const fonts = {
   body: '"Open Sans", Arial, system-ui, sans-serif',
   heading: '"Montserrat", Helvetica, Arial, Lucida, sans-serif',
 }
-export const customTheme = extendTheme({ colors, fonts, breakpoints })
+export const customTheme = extendTheme({ colors, fonts })

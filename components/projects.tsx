@@ -52,7 +52,7 @@ export function Projects({ projects, cols }: Props) {
           py="8"
           mx="auto">
           {projects.map((project) => (
-            <ProjectCard project={project} key={project.slug} />
+            <ProjectCard project={project} key={project.slug} cols={cols} />
           ))}
         </Grid>
         <Box maxW={['100%', '80%', '50%']} mx="auto" textAlign="center">

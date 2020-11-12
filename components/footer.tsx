@@ -5,7 +5,7 @@ import { Alert } from 'components/alert'
 export function Footer({ preview }: { preview: boolean }) {
   const year = new Date().getFullYear()
   return (
-    <Box backgroundColor="gray.900" height="100%">
+    <Box backgroundColor="gray.900" height="100%" px="4">
       <Grid
         templateColumns="repeat(3, 1fr)"
         gap={6}

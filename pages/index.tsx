@@ -3,6 +3,7 @@ import { getProjects } from '../lib/api'
 import { Project } from '../lib/contentTypes'
 import Layout from 'components/layout'
 import { Hero } from 'components/hero'
+import { Services } from 'components/services'
 import { ProjectCard } from 'components/project-card'
 
 function Home({ preview, items }: { preview: boolean; items: Project[] }) {
@@ -18,6 +19,7 @@ function Home({ preview, items }: { preview: boolean; items: Project[] }) {
           description="Professional web & app development for people and organisations that have a positive impact in the society."
           actionLink="/about"
         />
+        <Services />
         {items.map((project) => (
           <ProjectCard project={project} key={project.slug} />
         ))}

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
+import { useHasScrolledDown } from 'lib/useHasScrolledDown'
 
-// import Alert from 'components/alert'
-import { Box, Grid, useColorModeValue } from '@chakra-ui/core'
+import { Box, Flex, Grid, useColorModeValue } from '@chakra-ui/core'
 import { Footer } from 'components/footer'
 import { Navigation } from 'components/navigation'
 
@@ -12,11 +12,15 @@ export default function Layout({
   preview: boolean
   children: ReactElement
 }) {
+  const hasScrolledDown = useHasScrolledDown()
   const borderColor = useColorModeValue('gray.100', 'gray.700')
-  const bgColor = useColorModeValue('white', 'gray.800')
+  const bgColor = useColorModeValue(
+    hasScrolledDown ? 'transparent.white' : 'white',
+    hasScrolledDown ? 'transparent.black' : 'gray.800'
+  )
   const boxShadow = useColorModeValue(
     '0 0 7px rgba(0, 0, 0, 0.1)',
-    '0 0 7px rgba(255, 255, 255, 0.1)'
+    '0 0 7px rgba(22, 31, 41, 0.9)'
   )
   return (
     <Grid
@@ -35,9 +39,10 @@ export default function Layout({
         boxShadow={boxShadow}>
         <Navigation />
       </Box>
-
       <Box as="main" gridArea="main">
-        {children}
+        <Flex width="100%" flexDirection="column" minH="80vh">
+          {children}
+        </Flex>
       </Box>
       <Box as="footer" gridArea="footer">
         <Footer preview={preview} />

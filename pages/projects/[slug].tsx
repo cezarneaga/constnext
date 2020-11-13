@@ -30,18 +30,6 @@ export default function Post({ project, moreProjects, preview }: Props) {
   if (!router.isFallback && !project) {
     return <ErrorPage statusCode={404} />
   }
-  const {
-    title,
-    slug,
-    type,
-    stack,
-    details,
-    description,
-    mozaicCollection,
-    featuresCollection,
-    numbers,
-    image,
-  } = project
   return (
     <Layout preview={preview}>
       {router.isFallback ? (
@@ -51,9 +39,9 @@ export default function Post({ project, moreProjects, preview }: Props) {
           <article>
             <Head>
               <title>{project.title} | Cezar Neaga</title>
-              <meta property="og:image" content={project.image.url} />
+              <meta property="og:image" content={project?.image.url} />
             </Head>
-            <Hero title={title} type={type} />
+            <Hero title={project?.title} type={project?.type} />
             <Flex
               width="100%"
               height="auto"
@@ -71,7 +59,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                   width={['100%', '100%', '50%', '60%', '60%']}
                   pr={['0', '0', '4', '32']}>
                   <Text fontFamily="heading" fontSize="20px" fontWeight="700">
-                    {description}
+                    {project?.description}
                   </Text>
                 </Box>
                 <Box
@@ -79,7 +67,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                   mt={['6', '6', '0']}>
                   <Heading size="sm">Stack</Heading>
                   <List>
-                    {stack.map((s) => (
+                    {project?.stack.map((s) => (
                       <ListItem
                         color="gray.400"
                         fontFamily="heading"
@@ -96,7 +84,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                   mt={['6', '6', '0']}>
                   <Heading size="sm">Details</Heading>
                   <List>
-                    {details.map((s) => (
+                    {project?.details.map((s) => (
                       <ListItem
                         color="gray.400"
                         fontFamily="heading"
@@ -110,7 +98,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 </Box>
               </Flex>
             </Flex>
-            {mozaicCollection && (
+            {project?.mozaicCollection && (
               <Grid
                 templateColumns={[
                   'repeat(2, 1fr)',
@@ -133,8 +121,8 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 mx="auto">
                 <GridItem colSpan={2} rowSpan={[1, 1, 2]} overflow="hidden">
                   <Image
-                    alt={mozaicCollection.items[0].description}
-                    src={mozaicCollection.items[0].url}
+                    alt={project?.mozaicCollection.items[0]?.description}
+                    src={project?.mozaicCollection.items[0]?.url}
                     width={620}
                     height={496}
                     layout="responsive"
@@ -142,8 +130,8 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 </GridItem>
                 <GridItem colSpan={2} rowSpan={1} overflow="hidden">
                   <Image
-                    alt={mozaicCollection.items[1].description}
-                    src={mozaicCollection.items[1].url}
+                    alt={project?.mozaicCollection.items[1]?.description}
+                    src={project?.mozaicCollection.items[1]?.url}
                     width={620}
                     height={496}
                     layout="responsive"
@@ -151,8 +139,8 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 </GridItem>
                 <GridItem colSpan={1} rowSpan={1} overflow="hidden">
                   <Image
-                    alt={mozaicCollection.items[2].description}
-                    src={mozaicCollection.items[2].url}
+                    alt={project?.mozaicCollection.items[2]?.description}
+                    src={project?.mozaicCollection.items[2]?.url}
                     width={620}
                     height={496}
                     layout="responsive"
@@ -160,8 +148,8 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 </GridItem>
                 <GridItem colSpan={1} rowSpan={1} overflow="hidden">
                   <Image
-                    alt={mozaicCollection.items[3].description}
-                    src={mozaicCollection.items[3].url}
+                    alt={project?.mozaicCollection.items[3]?.description}
+                    src={project?.mozaicCollection.items[3]?.url}
                     width={620}
                     height={496}
                     layout="responsive"

@@ -12,7 +12,7 @@ import { InternalLink } from 'components/internal-link'
 import { NewlineText } from 'components/new-line'
 type Props = {
   title: string
-  type: string[]
+  type?: string[]
   description?: string
   actionLink?: string
 }

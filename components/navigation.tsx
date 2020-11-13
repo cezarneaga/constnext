@@ -34,7 +34,7 @@ export function Navigation() {
       maxWidth="1280px"
       mx="auto"
       height={show ? '100%' : '60px'}
-      bgColor={show ? bgColor : ''}
+      bgColor={show ? bgColor : 'transparent'}
       py={'10px'}
       align="center"
       justify="space-between"
@@ -61,7 +61,7 @@ export function Navigation() {
       </Box>
       <Box
         display={[show ? 'block' : 'none', show ? 'block' : 'none', 'flex']}
-        height={[show ? '100vh' : 'none', show ? '100vh' : 'none', 'flex']}
+        height={[show ? '100vh' : 'none', show ? '100vh' : 'none', 'auto']}
         alignItems="center"
         textAlign="right"
         width={['full', 'full', 'auto']}>

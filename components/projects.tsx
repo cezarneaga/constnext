@@ -15,7 +15,8 @@ type Props = {
 }
 export function Projects({ projects, cols }: Props) {
   const bgColor = useColorModeValue('gray.100', 'gray.800')
-
+  const headingColor = useColorModeValue('gray.900', 'white')
+  const textColor = useColorModeValue('gray.400', 'white')
   return (
     <Flex
       width="100%"
@@ -30,18 +31,18 @@ export function Projects({ projects, cols }: Props) {
           size="xl"
           textTransform="uppercase"
           textAlign="center"
-          color="gray.900">
+          color={headingColor}>
           Projects
         </Heading>
         <Box maxW={['100%', '80%', '50%']} mx="auto" mt="4">
           <Heading
             as="h3"
             textAlign="center"
-            color="gray.400"
+            color={textColor}
             lineHeight="1.5em"
             fontSize="xl"
             fontWeight="700">
-            Here are some of the ones I have been working on or that are
+            Here are some of the ones we have been working on or that are
             currently in progress.
           </Heading>
         </Box>

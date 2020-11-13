@@ -8,9 +8,12 @@ import {
   Flex,
   Box,
   useTheme,
+  useColorModeValue,
 } from '@chakra-ui/core'
 export function Services() {
   const theme = useTheme()
+  const headingColor = useColorModeValue('gray.900', 'white')
+  const textColor = useColorModeValue('gray.400', 'white')
   return (
     <Flex
       width="100%"
@@ -24,18 +27,18 @@ export function Services() {
           size="xl"
           textTransform="uppercase"
           textAlign="center"
-          color="gray.900">
-          What I do
+          color={headingColor}>
+          What we do
         </Heading>
         <Box maxW={['100%', '80%', '68%']} mx="auto" mt="4">
           <Heading
             as="h3"
             textAlign="center"
-            color="gray.400"
+            color={textColor}
             lineHeight="1.5em"
             fontSize="xl"
             fontWeight="700">
-            I spend most working days exploring the latest technologies in web
+            We spend most working days exploring the latest technologies in web
             development, working and learning together with an{' '}
             <Link
               href="https://www.meetup.com/ReactVienna/"
@@ -44,8 +47,8 @@ export function Services() {
               title="React Vienna">
               amazing community
             </Link>{' '}
-            of software developers. I give back by contributing to open source
-            projects.
+            of software developers. We give back by building open source
+            projects for social entrepreneurs and civil society.
           </Heading>
         </Box>
         <Grid

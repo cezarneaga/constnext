@@ -55,6 +55,7 @@ export function ProjectCard({
           <Heading
             fontSize={['20px', '20px', '28px', '28px']}
             textTransform="uppercase"
+            textAlign="center"
             color="#fff">
             {project.title}
           </Heading>

@@ -1,8 +1,16 @@
 import { Compass, Code as CodeIcon, Server } from 'react-feather'
-import { Heading, Link, Code, Grid, Flex, Box, useTheme } from '@chakra-ui/core'
+import {
+  Heading,
+  Link,
+  Text,
+  Code,
+  Grid,
+  Flex,
+  Box,
+  useTheme,
+} from '@chakra-ui/core'
 export function Services() {
   const theme = useTheme()
-  console.log('Services -> theme', theme.breakpoints)
   return (
     <Flex
       width="100%"
@@ -44,36 +52,41 @@ export function Services() {
           templateColumns={['1fr', '1fr', 'repeat(3, minmax(220px, 1fr))']}
           gap={6}
           maxWidth="1280px"
-          py="8"
+          my="8"
           mx="auto">
           <Flex
             flexDirection="column"
             alignItems="center"
-            p="6"
-            mb="8"
+            p="4"
             borderWidth="1px"
             borderRadius="md">
             <Compass size={50} color={theme.colors.brand['300']} />
             <Heading
-              fontSize="22px"
+              fontSize={['xl', 'xl', 'sm', 'xl', 'xl']}
               lineHeight="1.5em"
               margin={30}
               textAlign="center"
               textTransform="uppercase">
               Strategy Consulting & Assessments
             </Heading>
-            <p>
+            <Text fontSize={['sm', 'sm', 'sm', 'lg', 'lg']}>
               We grew wiser along with the web. Mistakes were replaced by
               learnings. If you are in the process of planning your web strategy
               we can share our{' '}
-              <a
+              <Link
+                color="brand.400"
                 title="definition: knowledge of a subject gained through involvement in or exposure to it"
                 href="/">
                 experience
-              </a>
-              .{' '}
-            </p>
-            <Code borderWidth="1px" width="100%" p="2" mt="4">
+              </Link>
+              .
+            </Text>
+            <Code
+              borderWidth="1px"
+              width="100%"
+              p="2"
+              mt="4"
+              fontSize={['sm', 'sm', 'xs', 'sm', 'sm']}>
               const experience = (!brag) =&gt; <br />
               learn(applyFix(mistakes))
             </Code>
@@ -82,25 +95,29 @@ export function Services() {
           <Flex
             flexDirection="column"
             alignItems="center"
-            p="6"
-            mb="8"
+            p="4"
             borderWidth="1px"
             borderRadius="md">
             <CodeIcon size={50} color={theme.colors.brand['300']} />
             <Heading
-              fontSize="22px"
+              fontSize={['xl', 'xl', 'sm', 'xl', 'xl']}
               lineHeight="1.5em"
               margin={30}
               textAlign="center"
               textTransform="uppercase">
               Custom Web Design & Development
             </Heading>
-            <p>
+            <Text fontSize={['sm', 'sm', 'sm', 'lg', 'lg']}>
               Small website or a community platform? We love simple, effective
               designs and of course, offering a great content management
               experience for you.
-            </p>
-            <Code borderWidth="1px" width="100%" p="2" mt="4">
+            </Text>
+            <Code
+              borderWidth="1px"
+              width="100%"
+              p="2"
+              mt="4"
+              fontSize={['sm', 'sm', 'xs', 'sm', 'sm']}>
               const pride = (effort) =&gt;
               <br /> clean(design, code)
             </Code>
@@ -108,25 +125,29 @@ export function Services() {
           <Flex
             flexDirection="column"
             alignItems="center"
-            p="6"
-            mb="8"
+            p="4"
             borderWidth="1px"
             borderRadius="md">
             <Server size={50} color={theme.colors.brand['300']} />
             <Heading
-              fontSize="22px"
+              fontSize={['xl', 'xl', 'sm', 'xl', 'xl']}
               lineHeight="1.5em"
               margin={30}
               textAlign="center"
               textTransform="uppercase">
               Scalable & Performant Hosting
             </Heading>
-            <p>
+            <Text fontSize={['sm', 'sm', 'sm', 'lg', 'lg']}>
               50% of visitors expect pages to load in 2 seconds or less. I offer
               bespoke server configurations and management to deliver this and
               more.
-            </p>
-            <Code borderWidth="1px" width="100%" p="2" mt="4">
+            </Text>
+            <Code
+              borderWidth="1px"
+              width="100%"
+              p="2"
+              mt="4"
+              fontSize={['sm', 'sm', 'xs', 'sm', 'sm']}>
               &gt;_ ssh secure@nginx
               <br /> -i scalable.pem
             </Code>

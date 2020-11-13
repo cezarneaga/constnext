@@ -1,9 +1,10 @@
+import { Fragment } from 'react'
 import { Heading } from '@chakra-ui/core'
 
 export function NewlineText({ text }: { text: string }) {
   const [one, two] = text.split('\n')
   return (
-    <>
+    <Fragment>
       <Heading
         textTransform="uppercase"
         fontSize="42px"
@@ -14,6 +15,6 @@ export function NewlineText({ text }: { text: string }) {
       <Heading textTransform="uppercase" fontSize="42px" lineHeight="1.5em">
         {two}
       </Heading>
-    </>
+    </Fragment>
   )
 }

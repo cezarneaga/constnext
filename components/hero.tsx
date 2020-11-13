@@ -1,21 +1,29 @@
 import { Info } from 'react-feather'
-import { Box, Button, Flex, Heading, useColorModeValue } from '@chakra-ui/core'
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  List,
+  ListItem,
+  useColorModeValue,
+} from '@chakra-ui/core'
 import { InternalLink } from 'components/internal-link'
 import { NewlineText } from 'components/new-line'
 type Props = {
   title: string
-  description: string
-  actionLink: string
+  type: string[]
+  description?: string
+  actionLink?: string
 }
-export function Hero({ title, description, actionLink }: Props) {
+export function Hero({ title, type, description, actionLink }: Props) {
   const bgColor = useColorModeValue('brand.300', 'gray.800')
   const color = useColorModeValue('gray.900', 'white')
   return (
     <Flex
       width="100%"
-      height="410px"
+      minH="280px"
       m="0"
-      px="4"
       alignItems="stretch"
       overflow="hidden"
       backgroundColor={bgColor}
@@ -26,7 +34,24 @@ export function Hero({ title, description, actionLink }: Props) {
       <Box
         width={['100%', '100%', '50%', '50%']}
         py="12"
-        pl={['0', '0', '0', 'calc((100% - 1280px) / 2)']}>
+        pr="4"
+        pl={['4', '4', '4', '4', 'calc(((100% - 1280px) / 2) + 1em)']}>
+        {type && (
+          <List
+            mb="12"
+            listStyleType="none"
+            fontFamily="heading"
+            fontWeight="500"
+            fontSize="14px"
+            letterSpacing="2px"
+            textTransform="uppercase">
+            {type.map((tag, index) => (
+              <ListItem key={tag} display="inline-block" mr="4px">
+                {index !== type.length - 1 ? `${tag},` : tag}
+              </ListItem>
+            ))}
+          </List>
+        )}
         <NewlineText text={title} />
 
         <Heading

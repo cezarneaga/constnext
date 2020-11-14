@@ -12,6 +12,7 @@ import {
   GridItem,
 } from '@chakra-ui/core'
 import { Projects } from 'components/projects'
+import { FeatureView } from 'components/feature'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Layout from 'components/layout'
@@ -156,6 +157,13 @@ export default function Post({ project, moreProjects, preview }: Props) {
                   />
                 </GridItem>
               </Grid>
+            )}
+            {project?.featuresCollection && (
+              <Box height="auto" my="8">
+                {project?.featuresCollection.items.map((feature) => (
+                  <FeatureView {...feature} />
+                ))}
+              </Box>
             )}
           </article>
 

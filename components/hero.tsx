@@ -7,7 +7,7 @@ import {
   List,
   ListItem,
   useColorModeValue,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import { InternalLink } from 'components/internal-link'
 import { NewlineText } from 'components/new-line'
 type Props = {

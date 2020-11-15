@@ -67,8 +67,10 @@ export function Hero({ title, type, description, actionLink }: Props) {
             <Button
               mt="8"
               leftIcon={<Info size={14} />}
-              colorScheme="gray"
-              // color="brand.400"
+              color="white"
+              _hover={{ color: 'gray.900', backgroundColor: 'white' }}
+              size="lg"
+              borderWidth="4px"
               variant="outline">
               Learn more
             </Button>

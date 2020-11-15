@@ -5,6 +5,7 @@ export const operationsDoc = `
         sys{
           id
           publishedAt
+          firstPublishedAt
         }
         title
         slug
@@ -26,6 +27,7 @@ export const operationsDoc = `
         sys{
           id
           publishedAt
+          firstPublishedAt
         }
         title
         type
@@ -75,6 +77,7 @@ export const operationsDoc = `
         sys {
           id
           publishedAt
+          firstPublishedAt
         }
         title
         slug

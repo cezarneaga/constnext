@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { ArticleJsonLd } from 'next-seo'
 import Head from 'next/head'
 import Image from 'next/image'
 import {
@@ -37,6 +38,17 @@ export default function Post({ project, moreProjects, preview }: Props) {
         <Fragment>Loading…</Fragment>
       ) : (
         <Fragment>
+          <ArticleJsonLd
+            url={`https://constnext.com/projects/${project?.slug}`}
+            title={project?.title}
+            images={project?.mozaicCollection?.items.map((img) => img.url)}
+            datePublished={project?.sys.firstPublishedAt}
+            dateModified={project?.sys.publishedAt}
+            authorName={['Cezar Neaga']}
+            publisherName="const NEXT"
+            publisherLogo="https://constnext.com/images/nav-logo.png"
+            description={project?.description}
+          />
           <article>
             <Head>
               <title>{project.title} | Cezar Neaga</title>

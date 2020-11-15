@@ -24,5 +24,6 @@ export interface Project {
   sys: {
     id: string
     publishedAt: string
+    firstPublishedAt: string
   }
 }

@@ -9,7 +9,7 @@ import {
   Box,
   useTheme,
   useColorModeValue,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 export function Services() {
   const theme = useTheme()
   const headingColor = useColorModeValue('gray.900', 'white')

@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Center, Flex } from '@chakra-ui/core'
+import { Box, Heading, Text, Center, Flex } from '@chakra-ui/react'
 import Image from 'next/image'
 import { Feature } from 'lib/contentTypes'
 

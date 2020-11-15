@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { ArrowRightCircle } from 'react-feather'
-import { Flex, Heading } from '@chakra-ui/core'
+import { Flex, Heading } from '@chakra-ui/react'
 import { Project } from '../lib/contentTypes'
 import { InternalLink } from 'components/internal-link'
 export function ProjectCard({

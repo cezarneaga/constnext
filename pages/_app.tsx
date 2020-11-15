@@ -1,5 +1,5 @@
 import type { AppProps /*, AppContext */ } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/core'
+import { ChakraProvider } from '@chakra-ui/react'
 import { customTheme } from 'components/theme'
 function MyApp({ Component, pageProps }: AppProps) {
   return (

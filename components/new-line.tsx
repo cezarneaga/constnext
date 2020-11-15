@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { Heading } from '@chakra-ui/core'
+import { Heading } from '@chakra-ui/react'
 
 export function NewlineText({ text }: { text: string }) {
   const [one, two] = text.split('\n')

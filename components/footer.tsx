@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Text } from '@chakra-ui/core'
+import { Box, Flex, Grid, Text } from '@chakra-ui/react'
 import { Follow } from 'components/follow'
 import { InternalLink } from 'components/internal-link'
 import { Alert } from 'components/alert'

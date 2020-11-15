@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import { useHasScrolledDown } from 'lib/useHasScrolledDown'
 
-import { Box, Flex, Grid, useColorModeValue } from '@chakra-ui/core'
+import { Box, Flex, Grid, useColorModeValue } from '@chakra-ui/react'
 import { Footer } from 'components/footer'
 import { Navigation } from 'components/navigation'
 

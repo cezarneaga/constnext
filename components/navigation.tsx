@@ -7,7 +7,7 @@ import {
   useColorMode,
   useColorModeValue,
   Link as Anchor,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import { InternalLink } from 'components/internal-link'
 import Image from 'next/image'
 import { Menu, Moon, Sun, X } from 'react-feather'

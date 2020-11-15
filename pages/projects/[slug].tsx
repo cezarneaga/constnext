@@ -10,7 +10,7 @@ import {
   Text,
   Grid,
   GridItem,
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import { Projects } from 'components/projects'
 import { FeatureView } from 'components/feature'
 import { useRouter } from 'next/router'

@@ -1,4 +1,4 @@
-import { Link } from '@chakra-ui/core'
+import { Link } from '@chakra-ui/react'
 
 import { Facebook, Twitter, Linkedin, GitHub } from 'react-feather'
 import { githubUrl, twitterUrl, facebookUrl, linkedinUrl } from 'utils/urls'

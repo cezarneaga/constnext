@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import { ArticleJsonLd } from 'next-seo'
+import { ArticleJsonLd, NextSeo } from 'next-seo'
 import Head from 'next/head'
 import Image from 'next/image'
 import {
@@ -11,6 +11,7 @@ import {
   Text,
   Grid,
   GridItem,
+  Img,
 } from '@chakra-ui/react'
 import { Projects } from 'components/projects'
 import { FeatureView } from 'components/feature'
@@ -38,6 +39,19 @@ export default function Post({ project, moreProjects, preview }: Props) {
         <Fragment>Loading…</Fragment>
       ) : (
         <Fragment>
+          <NextSeo
+            title={`${project?.title} - Simplify, Create, Amaze`}
+            description={project?.description}
+            canonical={`https://constnext.com/projects/${project?.slug}`}
+            openGraph={{
+              url: `https://constnext.com/projects/${project?.slug}`,
+              title: `${project?.title} - Simplify, Create, Amaze`,
+              description: project?.description,
+              images: project?.mozaicCollection?.items.map((img) => {
+                return { ...img, alt: img.description }
+              }),
+            }}
+          />
           <ArticleJsonLd
             url={`https://constnext.com/projects/${project?.slug}`}
             title={project?.title}

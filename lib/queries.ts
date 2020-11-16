@@ -8,6 +8,7 @@ export const operationsDoc = `
           firstPublishedAt
         }
         title
+        description
         slug
         stack
         image {

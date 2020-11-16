@@ -18,16 +18,16 @@ function Home({
     <Layout preview={preview}>
       <>
         <Head>
-          <title>Cezar Neaga - Simplify, Create, Amaze</title>
+          <title>constNext - Simplify, Create, Amaze</title>
           <link rel="icon" href="images/favicon.ico" />
         </Head>
         <NextSeo
-          title="Cezar Neaga - Simplify, Create, Amaze"
+          title="constNext - Simplify, Create, Amaze"
           description="Professional web & app development for people and organisations that have a positive impact in the society."
           canonical="https://constnext.com"
           openGraph={{
             url: 'https://constnext.com',
-            title: 'Cezar Neaga - Simplify, Create, Amaze',
+            title: 'constNext - Simplify, Create, Amaze',
             description:
               'Professional web & app development for people and organisations that have a positive impact in the society.',
             images: [
@@ -36,7 +36,7 @@ function Home({
                   'https://images.ctfassets.net/voxe5faf7baw/15bf3tWfqEWQbHmMqd0Xan/49199ff6464d5c54126c1677a706c99b/cn-home.png',
                 width: 1300,
                 height: 1041,
-                alt: 'const NEXT Homepage',
+                alt: 'constNEXT Homepage',
               },
             ],
           }}

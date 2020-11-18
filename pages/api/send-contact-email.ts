@@ -10,8 +10,8 @@ export default async function sendEmail(
     let { email, name, company, message } = JSON.parse(req.body)
     await postmark.sendEmailBatchWithTemplates([
       {
-        from: process.env.POSTMARK_FROM_ADDRESS,
-        to: 'cezar.neaga@hey.com',
+        From: process.env.POSTMARK_FROM_ADDRESS,
+        To: 'cezar.neaga@hey.com',
         TemplateId: process.env.POSTMARK_NEW_MESSAGE_ID,
         templateModel: {
           name,
@@ -19,6 +19,7 @@ export default async function sendEmail(
           company,
           message,
         },
+        MessageStream: 'contactform',
       },
       {
         from: process.env.POSTMARK_FROM_ADDRESS,
@@ -27,6 +28,7 @@ export default async function sendEmail(
         templateModel: {
           name,
         },
+        MessageStream: 'outbound',
       },
     ])
 

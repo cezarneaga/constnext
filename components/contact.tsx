@@ -106,7 +106,7 @@ export function Contact() {
               {({ field, form }: FieldProps) => (
                 <FormControl
                   isRequired
-                  isInvalid={!!form.errors.name && form.touched.name}>
+                  isInvalid={Boolean(form.errors.name && form.touched.name)}>
                   <InputGroup variant="flushed" colorScheme="brand" mt="8">
                     <FormLabel
                       htmlFor="name"
@@ -137,7 +137,9 @@ export function Contact() {
               {({ field, form }: FieldProps) => (
                 <FormControl
                   isRequired
-                  isInvalid={!!form.errors.company && form.touched.company}>
+                  isInvalid={Boolean(
+                    form.errors.company && form.touched.company
+                  )}>
                   <InputGroup variant="flushed" colorScheme="brand" mt="8">
                     <FormLabel
                       htmlFor="company"
@@ -169,7 +171,7 @@ export function Contact() {
               {({ field, form }: FieldProps) => (
                 <FormControl
                   isRequired
-                  isInvalid={!!form.errors.email && form.touched.email}>
+                  isInvalid={Boolean(form.errors.email && form.touched.email)}>
                   <InputGroup variant="flushed" colorScheme="brand" mt="8">
                     <FormLabel
                       htmlFor="email"
@@ -200,7 +202,9 @@ export function Contact() {
               {({ field, form }: FieldProps) => (
                 <FormControl
                   isRequired
-                  isInvalid={!!form.errors.message && form.touched.message}>
+                  isInvalid={Boolean(
+                    form.errors.message && form.touched.message
+                  )}>
                   <InputGroup variant="flushed" colorScheme="brand" mt="8">
                     <FormLabel
                       htmlFor="message"

@@ -15,8 +15,8 @@ export default function Layout({
   const hasScrolledDown = useHasScrolledDown()
   const borderColor = useColorModeValue('gray.100', 'gray.700')
   const bgColor = useColorModeValue(
-    hasScrolledDown ? 'transparent.white' : 'white',
-    hasScrolledDown ? 'transparent.black' : 'gray.800'
+    hasScrolledDown ? 'translucid.white' : 'white',
+    hasScrolledDown ? 'translucid.black' : 'gray.800'
   )
   const boxShadow = useColorModeValue(
     '0 0 7px rgba(0, 0, 0, 0.1)',

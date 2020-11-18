@@ -6,6 +6,7 @@ import Layout from 'components/layout'
 import { Hero } from 'components/hero'
 import { Services } from 'components/services'
 import { Projects } from 'components/projects'
+import { Contact } from 'components/contact'
 
 function Home({
   preview,
@@ -48,6 +49,7 @@ function Home({
         />
         <Services />
         <Projects projects={projects} cols={3} />
+        <Contact />
       </>
     </Layout>
   )

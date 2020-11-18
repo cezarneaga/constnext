@@ -52,8 +52,13 @@ export function Hero({ title, type, description, actionLink }: Props) {
             ))}
           </List>
         )}
-        <NewlineText text={title} />
-
+        <NewlineText
+          text={title}
+          textTransform="uppercase"
+          fontSize="42px"
+          lineHeight="1.5em"
+          firstLineColor="white"
+        />
         <Heading
           as="h3"
           fontSize="20px"

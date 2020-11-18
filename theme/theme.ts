@@ -1,4 +1,6 @@
 import { extendTheme } from '@chakra-ui/react'
+import Input from './components/input'
+import Textarea from './components/textarea'
 const colors = {
   brand: {
     900: '#1a365d',
@@ -17,7 +19,7 @@ const colors = {
     400: '#747d88',
     100: '#f7f7f7;',
   },
-  transparent: {
+  translucid: {
     black: 'rgba(33, 41, 51, 0.76)',
     white: 'rgba(255,255,255,0.76)',
   },
@@ -26,4 +28,11 @@ const fonts = {
   body: '"Open Sans", Arial, system-ui, sans-serif',
   heading: '"Montserrat", Helvetica, Arial, Lucida, sans-serif',
 }
-export const customTheme = extendTheme({ colors, fonts })
+export const customTheme = extendTheme({
+  colors,
+  fonts,
+  components: {
+    Input,
+    Textarea,
+  },
+})

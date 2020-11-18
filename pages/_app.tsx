@@ -3,7 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
 
 import SEO from '../next-seo.config'
-import { customTheme } from 'components/theme'
+import { customTheme } from 'theme/theme'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={customTheme}>

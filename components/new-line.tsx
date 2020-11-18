@@ -1,20 +1,19 @@
-import { Fragment } from 'react'
 import { Heading } from '@chakra-ui/react'
+import type { HeadingProps } from '@chakra-ui/react'
+type Props = HeadingProps & { text: string; firstLineColor: string }
 
-export function NewlineText({ text }: { text: string }) {
+export const NewlineText = ({ text, firstLineColor, ...rest }: Props) => {
   const [one, two] = text.split('\n')
   return (
-    <Fragment>
-      <Heading
-        textTransform="uppercase"
-        fontSize="42px"
-        lineHeight="1.5em"
-        color="white">
+    <>
+      <Heading {...rest} color={firstLineColor}>
         {one}
       </Heading>
-      <Heading textTransform="uppercase" fontSize="42px" lineHeight="1.5em">
+      <Heading
+        {...rest}
+        color={firstLineColor === 'white' ? 'gray.900' : 'white'}>
         {two}
       </Heading>
-    </Fragment>
+    </>
   )
 }

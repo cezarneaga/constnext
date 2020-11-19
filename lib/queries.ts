@@ -59,6 +59,9 @@ export const operationsDoc = `
             image {
               url
               title
+              description
+              width
+              height
             }
             imageLeft
             bottomSpacer
@@ -87,7 +90,7 @@ export const operationsDoc = `
         image {
           url
           fileName
-          description
+          title
           width
           height
         }

@@ -25,7 +25,7 @@ export function FeatureView({
         height={['auto', 'auto', '246px', '328px', '460px']}>
         <Image
           src={image.url}
-          alt={image.description}
+          alt={`${image.title} - ${image.description}`}
           width={720}
           height={460}
           layout="responsive"

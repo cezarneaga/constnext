@@ -16,7 +16,7 @@ type Props = {
   project: Project
 }
 export function Work({ index, project }: Props) {
-  const textColor = useColorModeValue('gray.400', 'white')
+  const textColor = useColorModeValue('gray.600', 'white')
   return (
     <Flex
       px="4"
@@ -40,11 +40,11 @@ export function Work({ index, project }: Props) {
           as="h3"
           fontSize="52px"
           lineHeight="1.5em"
-          color="brand.400"
+          color="brand.500"
           mt={[8, 8, 0]}>
           {twoDigits(index + 1)}
         </Heading>
-        <Heading as="h2" fontSize="22px" lineHeight="1.5em" color="brand.400">
+        <Heading as="h2" fontSize="22px" lineHeight="1.5em" color="brand.500">
           {project.title}
         </Heading>
         <Text fontSize="18px" lineHeight="1.5em" color={textColor}>

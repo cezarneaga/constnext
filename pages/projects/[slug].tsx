@@ -96,7 +96,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                   <List>
                     {project?.stack.map((s) => (
                       <ListItem
-                        color="gray.400"
+                        color="gray.500"
                         fontFamily="heading"
                         fontWeight="500"
                         fontSize={['14px', '14px', '16px', '18px']}
@@ -113,7 +113,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                   <List>
                     {project?.details.map((s) => (
                       <ListItem
-                        color="gray.400"
+                        color="gray.500"
                         fontFamily="heading"
                         fontWeight="500"
                         fontSize={['14px', '14px', '16px', '18px']}

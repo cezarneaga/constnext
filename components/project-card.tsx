@@ -30,7 +30,7 @@ export function ProjectCard({
         position="relative">
         <Image
           src={project.image.url}
-          alt={project.image.description}
+          alt={project.image.title}
           layout="fill"
         />
         <Flex

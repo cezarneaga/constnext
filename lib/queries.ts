@@ -14,7 +14,7 @@ export const operationsDoc = `
         image {
           url
           fileName
-          description
+          title
           width
           height
         }
@@ -40,7 +40,7 @@ export const operationsDoc = `
         image {
           url
           fileName
-          description
+          title
           width
           height
         }

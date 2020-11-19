@@ -25,7 +25,7 @@ const initialValues = {
 export function Contact() {
   const toast = useToast()
   const bgColor = useColorModeValue('brand.500', 'gray.900')
-  const firstLineColor = useColorModeValue('gray.700', 'white')
+  const firstLineColor = useColorModeValue('gray.900', 'white')
   return (
     <Flex
       flexDirection="column"

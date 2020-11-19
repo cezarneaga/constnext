@@ -32,7 +32,7 @@ function variantFlushed(props: Record<string, any>) {
         boxShadow: `0px 1px 0px 0px ${getColor(theme, ec)}`,
       },
       _placeholder: {
-        color: mode('gray.700', 'white')(props),
+        color: mode('gray.900', 'white')(props),
         fontWeight: 600,
       },
     },

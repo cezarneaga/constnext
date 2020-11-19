@@ -58,6 +58,7 @@ export const operationsDoc = `
             heading
             image {
               url
+              title
             }
             imageLeft
             bottomSpacer

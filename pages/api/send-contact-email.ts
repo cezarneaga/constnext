@@ -13,7 +13,7 @@ export default async function sendEmail(
         From: process.env.POSTMARK_FROM_ADDRESS,
         To: 'cezar.neaga@hey.com',
         TemplateId: process.env.POSTMARK_NEW_MESSAGE_ID,
-        templateModel: {
+        TemplateModel: {
           name,
           email,
           company,
@@ -22,10 +22,10 @@ export default async function sendEmail(
         MessageStream: 'contactform',
       },
       {
-        from: process.env.POSTMARK_FROM_ADDRESS,
-        to: email,
+        From: process.env.POSTMARK_FROM_ADDRESS,
+        To: email,
         TemplateId: process.env.POSTMARK_CONFIRMED_RECEIVED_ID,
-        templateModel: {
+        TemplateModel: {
           name,
         },
         MessageStream: 'outbound',

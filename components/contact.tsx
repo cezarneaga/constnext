@@ -24,7 +24,7 @@ const initialValues = {
 }
 export function Contact() {
   const toast = useToast()
-  const bgColor = useColorModeValue('brand.400', 'gray.900')
+  const bgColor = useColorModeValue('brand.500', 'gray.900')
   const firstLineColor = useColorModeValue('gray.700', 'white')
   return (
     <Flex

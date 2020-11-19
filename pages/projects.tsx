@@ -1,4 +1,4 @@
-import { Box, Flex, Heading } from '@chakra-ui/react'
+import { Box, Heading, useColorModeValue } from '@chakra-ui/react'
 import Layout from 'components/layout'
 import { NextSeo } from 'next-seo'
 import { getProjects } from '../lib/api'
@@ -9,6 +9,7 @@ type Props = {
   projects: Project[]
 }
 function Projects({ preview, projects }: Props) {
+  const headingColor = useColorModeValue('gray.900', 'white')
   return (
     <Layout preview={preview}>
       <>
@@ -61,12 +62,12 @@ function Projects({ preview, projects }: Props) {
               textTransform="uppercase"
               fontSize="42px"
               lineHeight="1.5em"
-              color="gray.900">
+              color={headingColor}>
               Projects
             </Heading>
             <Box
               display="block"
-              backgroundColor="gray.900"
+              backgroundColor={headingColor}
               width="100px"
               height="7px"
             />

@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, Text, Button, Center } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Button,
+  Center,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import Image from 'next/image'
 import { InternalLink } from 'components/internal-link'
 import { Project } from 'lib/contentTypes'
@@ -8,6 +16,7 @@ type Props = {
   project: Project
 }
 export function Work({ index, project }: Props) {
+  const textColor = useColorModeValue('gray.400', 'white')
   return (
     <Flex
       px="4"
@@ -38,13 +47,17 @@ export function Work({ index, project }: Props) {
         <Heading as="h2" fontSize="22px" lineHeight="1.5em" color="brand.400">
           {project.title}
         </Heading>
-        <Text fontSize="18px" lineHeight="1.5em" color="gray.400">
+        <Text fontSize="18px" lineHeight="1.5em" color={textColor}>
           {project.description}
         </Text>
         <InternalLink
           href={`/projects/${project.slug}`}
           my={['4', '4', '4', '12']}>
-          <Button colorScheme="brand" variant="outline">
+          <Button
+            colorScheme="brand"
+            _hover={{ color: 'gray.900', backgroundColor: 'white' }}
+            variant="outline"
+            borderWidth="4px">
             View Project
           </Button>
         </InternalLink>

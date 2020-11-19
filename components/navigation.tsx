@@ -74,7 +74,7 @@ export function Navigation() {
           href="/projects">
           Projects
         </InternalLink>
-        <InternalLink
+        {/* <InternalLink
           my={[20, 12, 0]}
           ml={6}
           fontSize={['4xl', '2xl', 'md', 'md']}
@@ -82,7 +82,7 @@ export function Navigation() {
           display="block"
           href="/about">
           About
-        </InternalLink>
+        </InternalLink> */}
         <IconButton
           ml={6}
           aria-label="Switch color mode"

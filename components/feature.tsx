@@ -1,4 +1,4 @@
-import { Box, Heading, Text, Center, Flex } from '@chakra-ui/react'
+import { Box, Heading, useColorModeValue, Flex } from '@chakra-ui/react'
 import Image from 'next/image'
 import { Feature } from 'lib/contentTypes'
 
@@ -10,15 +10,19 @@ export function FeatureView({
   description,
   bottomSpacer,
 }: Feature) {
+  const bgColor = useColorModeValue('white', 'gray.800')
+  const color = useColorModeValue('gray.900', 'white')
   return (
     <Flex
-      flexDirection={imageLeft ? 'row-reverse' : 'row'}
+      flexDirection={['column', 'column', imageLeft ? 'row-reverse' : 'row']}
       height="auto"
       width="100%"
       alignItems="stretch"
       overflow="hidden"
-      bgColor={backgroundColor}>
-      <Box width="50%" height="460px">
+      bgColor={bgColor}>
+      <Box
+        width={['100%', '100%', '50%']}
+        height={['auto', 'auto', '246px', '328px', '460px']}>
         <Image
           src={image.url}
           alt={image.description}
@@ -31,21 +35,30 @@ export function FeatureView({
         flexDirection="column"
         justifyContent="center"
         textAlign="left"
-        px={'calc((100% - 1280px) / 2)'}
-        color={backgroundColor}
-        width="50%">
+        my={['4', '4', 0]}
+        pr={['4', '4', imageLeft ? '4' : 'calc(((100% - 1280px) / 2) + 1em)']}
+        pl={['4', '4', imageLeft ? 'calc(((100% - 1280px) / 2) + 1em)' : '4']}
+        width={['100%', '100%', '50%']}>
         <Heading
-          fontSize="4xl"
-          color="gray.900"
+          fontSize={['4xl', '4xl', '2xl', '4xl']}
+          color={color}
           textTransform="uppercase"
           lineHeight="base">
           {heading}
         </Heading>
-        <Heading fontSize="lg" color="gray.900" lineHeight="base">
+        <Heading
+          fontSize={['lg', 'lg', 'md', 'lg']}
+          color={color}
+          lineHeight="base">
           {description}
         </Heading>
       </Flex>
-      {bottomSpacer && <Box bgColor="brand.400" height="4em" />}
+      {bottomSpacer && (
+        <Box
+          bgColor={useColorModeValue('brand.400', 'gray.800')}
+          height={[0, 0, '4em']}
+        />
+      )}
     </Flex>
   )
 }

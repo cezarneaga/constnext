@@ -14,7 +14,7 @@ function variantFlushed(props: Record<string, any>) {
     field: {
       boxShadow: 'none',
       borderBottom: '1px solid',
-      borderColor: 'gray.400',
+      borderColor: mode('gray.700', 'white')(props),
       borderRadius: 0,
       pl: 0,
       pr: 0,
@@ -31,7 +31,10 @@ function variantFlushed(props: Record<string, any>) {
         borderColor: getColor(theme, ec),
         boxShadow: `0px 1px 0px 0px ${getColor(theme, ec)}`,
       },
-      _placeholder: { color: 'gray.900', fontWeight: 600 },
+      _placeholder: {
+        color: mode('gray.700', 'white')(props),
+        fontWeight: 600,
+      },
     },
     addon: {
       borderBottom: '2px solid',

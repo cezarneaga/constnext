@@ -13,6 +13,7 @@ import {
   FormErrorMessage,
   useToast,
   FormLabel,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { NewlineText } from './new-line'
 const initialValues = {
@@ -23,10 +24,12 @@ const initialValues = {
 }
 export function Contact() {
   const toast = useToast()
+  const bgColor = useColorModeValue('brand.400', 'gray.900')
+  const firstLineColor = useColorModeValue('gray.700', 'white')
   return (
     <Flex
       flexDirection="column"
-      backgroundColor="brand.400"
+      backgroundColor={bgColor}
       width="100%"
       height="auto"
       m="0"
@@ -36,7 +39,7 @@ export function Contact() {
       <Box width="100%" maxW="780px" mx="auto" py="8">
         <NewlineText
           text={`Let's start something together \nSay hello!`}
-          firstLineColor="gray.900"
+          firstLineColor={firstLineColor}
           textTransform="uppercase"
           lineHeight="1.5em"
           textAlign="center"
@@ -116,7 +119,7 @@ export function Contact() {
                         overflow="hidden">
                         Your name
                       </FormLabel>
-                      <Input {...field} placeholder="Your name" />
+                      <Input {...field} id="name" placeholder="Your name" />
                       <InputRightElement
                         color="white"
                         children={
@@ -149,7 +152,11 @@ export function Contact() {
                         overflow="hidden">
                         Your company
                       </FormLabel>
-                      <Input {...field} placeholder="Your company" />
+                      <Input
+                        {...field}
+                        id="company"
+                        placeholder="Your company"
+                      />
                       <InputRightElement
                         color="white"
                         children={
@@ -183,7 +190,7 @@ export function Contact() {
                         overflow="hidden">
                         Your email
                       </FormLabel>
-                      <Input {...field} placeholder="Your email" />
+                      <Input {...field} id="email" placeholder="Your email" />
                       <InputRightElement
                         color="white"
                         children={
@@ -218,6 +225,7 @@ export function Contact() {
                       </FormLabel>
                       <Textarea
                         {...field}
+                        id="message"
                         placeholder="Your message"
                         rows={5}
                         pr="8"
@@ -240,10 +248,11 @@ export function Contact() {
                 type="submit"
                 variant="outline"
                 isLoading={isSubmitting}
-                color="white"
-                _hover={{ color: 'gray.900', backgroundColor: 'white' }}
+                colorScheme="gray"
+                // color="gray.700"
+                // fontWeight={600}
+                // _hover={{ color: 'gray.700', backgroundColor: 'white' }}
                 size="lg"
-                borderWidth="4px"
                 mt="8"
                 ml="calc(100% - 120px)">
                 Submit

@@ -6,7 +6,6 @@ import {
   IconButton,
   useColorMode,
   useColorModeValue,
-  Link as Anchor,
 } from '@chakra-ui/react'
 import { InternalLink } from 'components/internal-link'
 import Image from 'next/image'
@@ -19,7 +18,7 @@ export function Navigation() {
   const handleToggle = () => setShow(!show)
   const { toggleColorMode } = useColorMode()
   const SwitchIcon = useColorModeValue(Moon, Sun)
-  const bgColor = useColorModeValue('white', 'gray.800')
+  const bgColor = useColorModeValue('transparent', 'gray.800')
   const color = useColorModeValue('brand.900', 'brand.100')
 
   // when active route changes, we probably clicked on a nav link
@@ -85,6 +84,7 @@ export function Navigation() {
         </InternalLink> */}
         <IconButton
           ml={6}
+          borderWidth="0"
           aria-label="Switch color mode"
           float={[show ? 'right' : 'none', show ? 'right' : 'none']}
           onClick={() => {

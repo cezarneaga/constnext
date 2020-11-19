@@ -4,23 +4,27 @@ import { Facebook, Twitter, Linkedin, GitHub } from 'react-feather'
 import { githubUrl, twitterUrl, facebookUrl, linkedinUrl } from 'utils/urls'
 const followItems = [
   {
-    icon: <GitHub color="#666" size={18} />,
+    icon: <GitHub color="#d1d5db" size={18} />,
     href: githubUrl,
+    title: 'Find me on GitHub',
   },
 
   {
-    icon: <Twitter color="#666" size={18} />,
+    icon: <Twitter color="#d1d5db" size={18} />,
     href: twitterUrl,
+    title: 'Find me on twitter',
   },
 
   {
-    icon: <Facebook color="#666" size={18} />,
+    icon: <Facebook color="#d1d5db" size={18} />,
     href: facebookUrl,
+    title: 'Find me on facebook',
   },
 
   {
-    icon: <Linkedin color="#666" size={18} />,
+    icon: <Linkedin color="#d1d5db" size={18} />,
     href: linkedinUrl,
+    title: 'Find me on LinkedIn',
   },
 ]
 
@@ -31,6 +35,7 @@ export function Follow() {
         <Link
           key={index}
           href={followItem.href}
+          title={followItem.title}
           isExternal
           padding="4"
           alignSelf="center">

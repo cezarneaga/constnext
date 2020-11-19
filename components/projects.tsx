@@ -15,8 +15,8 @@ type Props = {
 }
 export function Projects({ projects, cols }: Props) {
   const bgColor = useColorModeValue('gray.100', 'gray.800')
-  const headingColor = useColorModeValue('gray.900', 'white')
-  const textColor = useColorModeValue('gray.400', 'white')
+  const headingColor = useColorModeValue('gray.700', 'white')
+  const textColor = useColorModeValue('gray.500', 'white')
   return (
     <Flex
       width="100%"
@@ -57,13 +57,9 @@ export function Projects({ projects, cols }: Props) {
           ))}
         </Grid>
         <Box maxW={['100%', '80%', '50%']} mx="auto" textAlign="center">
-          <InternalLink href="/projects">
-            <Button
-              variant="outline"
-              colorScheme="brand"
-              borderWidth="4px"
-              size="lg">
-              see more
+          <InternalLink href="/projects" title="see all projects">
+            <Button variant="outline" colorScheme="brand">
+              All projects
             </Button>
           </InternalLink>
         </Box>

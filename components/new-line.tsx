@@ -1,9 +1,11 @@
-import { Heading } from '@chakra-ui/react'
+import { Heading, useColorModeValue } from '@chakra-ui/react'
 import type { HeadingProps } from '@chakra-ui/react'
 type Props = HeadingProps & { text: string; firstLineColor: string }
 
 export const NewlineText = ({ text, firstLineColor, ...rest }: Props) => {
   const [one, two] = text.split('\n')
+  const opositeColor = useColorModeValue('gray.700', 'gray.200')
+
   return (
     <>
       <Heading {...rest} color={firstLineColor}>
@@ -11,7 +13,7 @@ export const NewlineText = ({ text, firstLineColor, ...rest }: Props) => {
       </Heading>
       <Heading
         {...rest}
-        color={firstLineColor === 'white' ? 'gray.900' : 'white'}>
+        color={firstLineColor === 'white' ? opositeColor : 'white'}>
         {two}
       </Heading>
     </>

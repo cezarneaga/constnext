@@ -187,7 +187,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
             {project?.featuresCollection && (
               <Box height="auto" my="8">
                 {project?.featuresCollection.items.map((feature) => (
-                  <FeatureView {...feature} />
+                  <FeatureView {...feature} key={feature.heading} />
                 ))}
               </Box>
             )}

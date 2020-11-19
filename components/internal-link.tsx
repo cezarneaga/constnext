@@ -40,7 +40,8 @@ export const InternalLink = forwardRef<HTMLAnchorElement, InternalLinkProps>(
         <ChakraLink
           {...rest}
           ref={forwardRef}
-          aria-current={isActive ? 'page' : undefined}>
+          aria-current={isActive ? 'page' : undefined}
+          _hover={{ textDecoration: 'none' }}>
           {children}
         </ChakraLink>
       </NextLink>

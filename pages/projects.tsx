@@ -9,7 +9,7 @@ type Props = {
   projects: Project[]
 }
 function Projects({ preview, projects }: Props) {
-  const headingColor = useColorModeValue('gray.900', 'white')
+  const headingColor = useColorModeValue('gray.700', 'white')
   return (
     <Layout preview={preview}>
       <>

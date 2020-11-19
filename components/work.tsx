@@ -55,7 +55,7 @@ export function Work({ index, project }: Props) {
           my={['4', '4', '4', '12']}>
           <Button
             colorScheme="brand"
-            _hover={{ color: 'gray.900', backgroundColor: 'white' }}
+            _hover={{ color: 'gray.700', backgroundColor: 'white' }}
             variant="outline"
             borderWidth="4px">
             View Project

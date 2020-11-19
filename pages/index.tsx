@@ -45,7 +45,7 @@ function Home({
         <Hero
           title={`Simplify,\nCreate & Amaze`}
           description="Professional web & app development for people and organisations that have a positive impact in the society."
-          actionLink="/about"
+          // actionLink="/about"
         />
         <Services />
         <Projects projects={projects} cols={3} />

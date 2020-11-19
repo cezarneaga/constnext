@@ -11,7 +11,7 @@ export function FeatureView({
   bottomSpacer,
 }: Feature) {
   const bgColor = useColorModeValue('white', 'gray.800')
-  const color = useColorModeValue('gray.900', 'white')
+  const color = useColorModeValue('gray.700', 'white')
   return (
     <Flex
       flexDirection={['column', 'column', imageLeft ? 'row-reverse' : 'row']}

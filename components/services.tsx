@@ -12,8 +12,8 @@ import {
 } from '@chakra-ui/react'
 export function Services() {
   const theme = useTheme()
-  const headingColor = useColorModeValue('gray.900', 'white')
-  const textColor = useColorModeValue('gray.400', 'white')
+  const headingColor = useColorModeValue('gray.700', 'white')
+  const textColor = useColorModeValue('gray.500', 'white')
   return (
     <Flex
       width="100%"
@@ -43,7 +43,7 @@ export function Services() {
             <Link
               href="https://www.meetup.com/ReactVienna/"
               isExternal
-              color="brand.400"
+              color="brand.500"
               title="React Vienna">
               amazing community
             </Link>{' '}
@@ -77,9 +77,10 @@ export function Services() {
               learnings. If you are in the process of planning your web strategy
               we can share our{' '}
               <Link
-                color="brand.400"
+                color="brand.500"
+                fontWeight="600"
                 title="definition: knowledge of a subject gained through involvement in or exposure to it"
-                href="/">
+                href="#">
                 experience
               </Link>
               .

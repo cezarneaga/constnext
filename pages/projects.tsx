@@ -16,9 +16,9 @@ function Projects({ preview, projects }: Props) {
         <NextSeo
           title="Projects - Simplify, Create, Amaze"
           description="Professional web & app development for people and organisations that have a positive impact in the society."
-          canonical="https://constnext.com"
+          canonical="https://constnext.com/projects"
           openGraph={{
-            url: 'https://constnext.com',
+            url: 'https://constnext.com/projects',
             title: 'Projects - Simplify, Create, Amaze',
             description:
               'Professional web & app development for people and organisations that have a positive impact in the society.',

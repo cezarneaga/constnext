@@ -8,6 +8,7 @@ export type Image = {
   url: string
   fileName?: string
   description?: string
+  title?: string
   width?: number
   height?: number
 }

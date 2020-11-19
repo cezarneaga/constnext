@@ -65,7 +65,7 @@ export function Work({ index, project }: Props) {
       <Box width={['100%', '100%', '50%', '50%', '50%']} height="100%">
         <Image
           src={project.image.url}
-          alt={project.image.description}
+          alt={project.image.title}
           width={624}
           height={500}
           layout="responsive"

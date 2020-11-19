@@ -148,7 +148,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 mx="auto">
                 <GridItem colSpan={2} rowSpan={[1, 1, 2]} overflow="hidden">
                   <Image
-                    alt={project?.mozaicCollection.items[0]?.description}
+                    alt={project?.mozaicCollection.items[0]?.title}
                     src={project?.mozaicCollection.items[0]?.url}
                     width={620}
                     height={496}
@@ -157,7 +157,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 </GridItem>
                 <GridItem colSpan={2} rowSpan={1} overflow="hidden">
                   <Image
-                    alt={project?.mozaicCollection.items[1]?.description}
+                    alt={project?.mozaicCollection.items[1]?.title}
                     src={project?.mozaicCollection.items[1]?.url}
                     width={620}
                     height={496}
@@ -166,7 +166,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 </GridItem>
                 <GridItem colSpan={1} rowSpan={1} overflow="hidden">
                   <Image
-                    alt={project?.mozaicCollection.items[2]?.description}
+                    alt={project?.mozaicCollection.items[2]?.title}
                     src={project?.mozaicCollection.items[2]?.url}
                     width={620}
                     height={496}
@@ -175,7 +175,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 </GridItem>
                 <GridItem colSpan={1} rowSpan={1} overflow="hidden">
                   <Image
-                    alt={project?.mozaicCollection.items[3]?.description}
+                    alt={project?.mozaicCollection.items[3]?.title}
                     src={project?.mozaicCollection.items[3]?.url}
                     width={620}
                     height={496}

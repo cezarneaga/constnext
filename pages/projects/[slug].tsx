@@ -1,4 +1,3 @@
-import { Fragment } from 'react'
 import { ArticleJsonLd, NextSeo } from 'next-seo'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -11,7 +10,6 @@ import {
   Text,
   Grid,
   GridItem,
-  Img,
 } from '@chakra-ui/react'
 import { Projects } from 'components/projects'
 import { FeatureView } from 'components/feature'
@@ -36,9 +34,9 @@ export default function Post({ project, moreProjects, preview }: Props) {
   return (
     <Layout preview={preview}>
       {router.isFallback ? (
-        <Fragment>Loading…</Fragment>
+        <>Loading…</>
       ) : (
-        <Fragment>
+        <>
           <NextSeo
             title={`${project?.title} - Simplify, Create, Amaze`}
             description={project?.description}
@@ -59,7 +57,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
             datePublished={project?.sys.firstPublishedAt}
             dateModified={project?.sys.publishedAt}
             authorName={['Cezar Neaga']}
-            publisherName="const NEXT"
+            publisherName="constNEXT"
             publisherLogo="https://constnext.com/images/nav-logo.png"
             description={project?.description}
           />
@@ -196,7 +194,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
           {moreProjects && moreProjects.length > 0 && (
             <Projects projects={moreProjects} cols={4} />
           )}
-        </Fragment>
+        </>
       )}
     </Layout>
   )

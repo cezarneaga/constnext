@@ -68,7 +68,7 @@ export function Hero({ title, type, description, actionLink }: Props) {
           {description}
         </Heading>
         {actionLink && (
-          <InternalLink href={actionLink} title="About constNext">
+          <InternalLink href={actionLink} title="About constNEXT">
             <Button mt="8" leftIcon={<Info size={14} />} variant="outline">
               Learn more
             </Button>

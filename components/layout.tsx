@@ -10,7 +10,7 @@ export default function Layout({
   children,
 }: {
   preview: boolean
-  children: ReactElement
+  children: ReactElement | ReactElement[]
 }) {
   const hasScrolledDown = useHasScrolledDown()
   const borderColor = useColorModeValue('gray.100', 'gray.700')

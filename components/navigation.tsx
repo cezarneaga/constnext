@@ -14,6 +14,7 @@ import { Menu, Moon, Sun, X } from 'react-feather'
 export function Navigation() {
   const router = useRouter()
   const activeRoute = router.pathname
+  console.log('Navigation -> activeRoute', activeRoute)
   const [show, setShow] = useState(false)
   const handleToggle = () => setShow(!show)
   const { toggleColorMode } = useColorMode()
@@ -71,6 +72,8 @@ export function Navigation() {
           fontSize={['4xl', '2xl', 'md', 'md']}
           fontWeight="semibold"
           display="block"
+          borderBottom={activeRoute === '/projects' ? '4px' : '0'}
+          borderColor="brand.400"
           href="/projects">
           Projects
         </InternalLink>

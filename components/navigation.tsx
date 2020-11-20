@@ -87,6 +87,7 @@ export function Navigation() {
         </InternalLink> */}
         <IconButton
           ml={6}
+          size="md"
           borderWidth="0"
           aria-label="Switch color mode"
           float={[show ? 'right' : 'none', show ? 'right' : 'none']}

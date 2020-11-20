@@ -10,6 +10,7 @@ type Props = {
 }
 function Projects({ preview, projects }: Props) {
   const headingColor = useColorModeValue('gray.700', 'white')
+  const bgColor = useColorModeValue('white', 'gray.900')
   return (
     <Layout preview={preview}>
       <NextSeo
@@ -34,6 +35,7 @@ function Projects({ preview, projects }: Props) {
       />
       <Box
         width="100%"
+        bgColor={bgColor}
         backgroundImage="url('/images/logo-sprite.svg')"
         backgroundPosition={[
           'calc(-140px * 12) calc((-79px * 2) + 10px)',

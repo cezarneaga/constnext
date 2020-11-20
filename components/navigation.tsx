@@ -47,6 +47,7 @@ export function Navigation() {
             alt="Cezar Neaga - Click to go back home"
             width={70}
             height={40}
+            layout="fixed"
           />
         </InternalLink>
       </Flex>

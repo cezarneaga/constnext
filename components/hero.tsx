@@ -17,7 +17,7 @@ type Props = {
   actionLink?: string
 }
 export function Hero({ title, type, description, actionLink }: Props) {
-  const bgColor = useColorModeValue('brand.500', 'gray.800')
+  const bgColor = useColorModeValue('brand.500', 'gray.900')
   const color = useColorModeValue('gray.700', 'white')
   return (
     <Flex

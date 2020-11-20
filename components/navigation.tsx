@@ -14,7 +14,6 @@ import { Menu, Moon, Sun, X } from 'react-feather'
 export function Navigation() {
   const router = useRouter()
   const activeRoute = router.pathname
-  console.log('Navigation -> activeRoute', activeRoute)
   const [show, setShow] = useState(false)
   const handleToggle = () => setShow(!show)
   const { toggleColorMode } = useColorMode()

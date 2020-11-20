@@ -19,6 +19,10 @@ Real experience score: lighthouse scores on Vercel
 
 ---
 
+## Stack
+
+This is a nextjs project in typescript using chakra-ui and contentful graphql as a data layer.
+
 ## Usage
 
 ```bash

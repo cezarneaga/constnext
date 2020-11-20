@@ -27,7 +27,7 @@ export function Footer({ preview }: { preview: boolean }) {
         <Flex
           alignItems="center"
           justifyContent={['center', 'center', 'flex-end']}>
-          <InternalLink href="#" color="gray.300">
+          <InternalLink href="/" color="gray.300">
             Imprint
           </InternalLink>
           {process.env.NODE_ENV === 'development' && (

@@ -81,7 +81,7 @@ function Projects({ preview, projects }: Props) {
   )
 }
 export async function getStaticProps({ preview = false }) {
-  const projects = await getProjects(3, preview)
+  const projects = await getProjects(20, preview)
   return {
     props: {
       preview,

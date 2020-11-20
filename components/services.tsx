@@ -80,7 +80,7 @@ export function Services() {
                 color="brand.500"
                 fontWeight="600"
                 title="definition: knowledge of a subject gained through involvement in or exposure to it"
-                href="#">
+                href="/">
                 experience
               </Link>
               .

@@ -20,6 +20,7 @@ import Layout from 'components/layout'
 import { getProjectBySlug, getAllProjectsWithSlugs } from 'lib/api'
 import { Project } from '../../lib/contentTypes'
 import { Hero } from 'components/hero'
+import { NumbersView } from 'components/numbers'
 type Props = {
   project: Project
   moreProjects: Project[]
@@ -194,6 +195,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
           {moreProjects && moreProjects.length > 0 && (
             <Projects projects={moreProjects} cols={4} />
           )}
+          <NumbersView numbers={project?.numbers} />
         </>
       )}
     </Layout>

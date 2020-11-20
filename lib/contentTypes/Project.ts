@@ -1,6 +1,15 @@
 import { Image } from './generic'
 import { Feature } from './Feature'
-
+export interface Numbers {
+  absolute: {
+    name: string
+    value: string
+  }[]
+  relative: {
+    name: string
+    value: string
+  }[]
+}
 export interface Project {
   title: string
   slug: string
@@ -8,16 +17,7 @@ export interface Project {
   details: string[]
   stack: string[]
   type: string[]
-  numbers?: {
-    absolute: {
-      name: string
-      value: string
-    }[]
-    relative: {
-      name: string
-      value: string
-    }[]
-  }
+  numbers?: Numbers
   image: Image
   mozaicCollection: { items: Image[] }
   featuresCollection?: { items: Feature[] }

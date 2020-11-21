@@ -16,6 +16,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <script async data-api="/_hive" src="/bee.js"></script>
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}></script>

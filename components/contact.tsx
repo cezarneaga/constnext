@@ -104,7 +104,7 @@ export function Contact() {
             }
           }}>
           {({ isSubmitting }) => (
-            <Form>
+            <Form data-splitbee-event="contact form submitted">
               <Field name="name">
                 {({ field, form }: FieldProps) => (
                   <FormControl
@@ -175,7 +175,7 @@ export function Contact() {
                 )}
               </Field>
               <Field name="url">
-                {({ field, form }: FieldProps) => (
+                {({ field }: FieldProps) => (
                   <Input
                     {...field}
                     id="url"

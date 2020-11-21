@@ -18,6 +18,7 @@ import {
 import { NewlineText } from './new-line'
 const initialValues = {
   name: '',
+  url: '',
   company: '',
   email: '',
   message: '',
@@ -64,6 +65,7 @@ export function Contact() {
               .required('Required!'),
           })}
           onSubmit={async (values, { resetForm }) => {
+            if (values.url !== '') return
             try {
               const response = await fetch('api/send-contact-email', {
                 method: 'post',
@@ -170,6 +172,16 @@ export function Contact() {
                       {form.errors.company}
                     </FormErrorMessage>
                   </FormControl>
+                )}
+              </Field>
+              <Field name="url">
+                {({ field, form }: FieldProps) => (
+                  <Input
+                    {...field}
+                    id="url"
+                    placeholder="Your url"
+                    style={{ display: 'none' }}
+                  />
                 )}
               </Field>
               <Field name="email">

@@ -18,11 +18,11 @@ class MyDocument extends Document {
         <Head>
           <script async data-api="/_hive" src="/bee.js"></script>
           <link rel="icon" href="/images/favicon.ico" />
-          {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@300;400;600&display=swap"
             rel="stylesheet"
-          /> */}
+          />
         </Head>
         <body>
           <ColorModeScript initialColorMode="light" />

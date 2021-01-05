@@ -1,16 +1,7 @@
 import { ArticleJsonLd, NextSeo } from 'next-seo'
 import Head from 'next/head'
 import Image from 'next/image'
-import {
-  Flex,
-  Box,
-  List,
-  ListItem,
-  Heading,
-  Text,
-  Grid,
-  GridItem,
-} from '@chakra-ui/react'
+import { Flex, Box, List, ListItem, Heading, Text, Grid, GridItem } from '@chakra-ui/react'
 import { Projects } from 'components/projects'
 import { FeatureView } from 'components/feature'
 import { useRouter } from 'next/router'
@@ -58,46 +49,31 @@ export default function Post({ project, moreProjects, preview }: Props) {
             datePublished={project?.sys.firstPublishedAt}
             dateModified={project?.sys.publishedAt}
             authorName={['Cezar Neaga']}
-            publisherName="constNEXT"
-            publisherLogo="https://constnext.com/images/nav-logo.png"
+            publisherName='const NEXT'
+            publisherLogo='https://constnext.com/images/nav-logo.png'
             description={project?.description}
           />
           <article>
             <Head>
               <title>{project.title} | Cezar Neaga</title>
-              <meta property="og:image" content={project?.image.url} />
+              <meta property='og:image' content={project?.image.url} />
             </Head>
             <Hero title={project?.title} type={project?.type} />
-            <Flex
-              width="100%"
-              height="auto"
-              m="0"
-              alignItems="stretch"
-              overflow="hidden">
-              <Flex
-                width="100%"
-                maxW="1280px"
-                mx="auto"
-                py="8"
-                flexWrap="wrap"
-                px="4">
-                <Box
-                  width={['100%', '100%', '50%', '60%', '60%']}
-                  pr={['0', '0', '4', '32']}>
-                  <Text fontFamily="heading" fontSize="20px" fontWeight="700">
+            <Flex width='100%' height='auto' m='0' alignItems='stretch' overflow='hidden'>
+              <Flex width='100%' maxW='1280px' mx='auto' py='8' flexWrap='wrap' px='4'>
+                <Box width={['100%', '100%', '50%', '60%', '60%']} pr={['0', '0', '4', '32']}>
+                  <Text fontFamily='heading' fontSize='20px' fontWeight='700'>
                     {project?.description}
                   </Text>
                 </Box>
-                <Box
-                  width={['50%', '50%', '25%', '20%', '20%']}
-                  mt={['6', '6', '0']}>
-                  <Heading size="sm">Stack</Heading>
+                <Box width={['50%', '50%', '25%', '20%', '20%']} mt={['6', '6', '0']}>
+                  <Heading size='sm'>Stack</Heading>
                   <List>
                     {project?.stack.map((s) => (
                       <ListItem
-                        color="gray.500"
-                        fontFamily="heading"
-                        fontWeight="500"
+                        color='gray.500'
+                        fontFamily='heading'
+                        fontWeight='500'
                         fontSize={['14px', '14px', '16px', '18px']}
                         key={s}>
                         {s}
@@ -105,16 +81,14 @@ export default function Post({ project, moreProjects, preview }: Props) {
                     ))}
                   </List>
                 </Box>
-                <Box
-                  width={['50%', '50%', '25%', '20%', '20%']}
-                  mt={['6', '6', '0']}>
-                  <Heading size="sm">Details</Heading>
+                <Box width={['50%', '50%', '25%', '20%', '20%']} mt={['6', '6', '0']}>
+                  <Heading size='sm'>Details</Heading>
                   <List>
                     {project?.details.map((s) => (
                       <ListItem
-                        color="gray.500"
-                        fontFamily="heading"
-                        fontWeight="500"
+                        color='gray.500'
+                        fontFamily='heading'
+                        fontWeight='500'
                         fontSize={['14px', '14px', '16px', '18px']}
                         key={s}>
                         {s}
@@ -126,13 +100,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
             </Flex>
             {project?.mozaicCollection && (
               <Grid
-                templateColumns={[
-                  'repeat(2, 1fr)',
-                  'repeat(2, 1fr)',
-                  'repeat(4, 1fr)',
-                  'repeat(4, 1fr)',
-                  'repeat(4, 1fr)',
-                ]}
+                templateColumns={['repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(4, 1fr)', 'repeat(4, 1fr)', 'repeat(4, 1fr)']}
                 templateRows={[
                   'repeat(2, 232px)',
                   'repeat(2, 232px)',
@@ -141,50 +109,50 @@ export default function Post({ project, moreProjects, preview }: Props) {
                   'repeat(2, 232px)',
                 ]}
                 gap={6}
-                maxWidth="1280px"
-                py="8"
-                px="4"
-                mx="auto">
-                <GridItem colSpan={2} rowSpan={[1, 1, 2]} overflow="hidden">
+                maxWidth='1280px'
+                py='8'
+                px='4'
+                mx='auto'>
+                <GridItem colSpan={2} rowSpan={[1, 1, 2]} overflow='hidden'>
                   <Image
                     alt={project?.mozaicCollection.items[0]?.title}
                     src={project?.mozaicCollection.items[0]?.url}
                     width={620}
                     height={496}
-                    layout="responsive"
+                    layout='responsive'
                   />
                 </GridItem>
-                <GridItem colSpan={2} rowSpan={1} overflow="hidden">
+                <GridItem colSpan={2} rowSpan={1} overflow='hidden'>
                   <Image
                     alt={project?.mozaicCollection.items[1]?.title}
                     src={project?.mozaicCollection.items[1]?.url}
                     width={620}
                     height={496}
-                    layout="responsive"
+                    layout='responsive'
                   />
                 </GridItem>
-                <GridItem colSpan={1} rowSpan={1} overflow="hidden">
+                <GridItem colSpan={1} rowSpan={1} overflow='hidden'>
                   <Image
                     alt={project?.mozaicCollection.items[2]?.title}
                     src={project?.mozaicCollection.items[2]?.url}
                     width={620}
                     height={496}
-                    layout="responsive"
+                    layout='responsive'
                   />
                 </GridItem>
-                <GridItem colSpan={1} rowSpan={1} overflow="hidden">
+                <GridItem colSpan={1} rowSpan={1} overflow='hidden'>
                   <Image
                     alt={project?.mozaicCollection.items[3]?.title}
                     src={project?.mozaicCollection.items[3]?.url}
                     width={620}
                     height={496}
-                    layout="responsive"
+                    layout='responsive'
                   />
                 </GridItem>
               </Grid>
             )}
             {project?.featuresCollection && (
-              <Box height="auto" my="8">
+              <Box height='auto' my='8'>
                 {project?.featuresCollection.items.map((feature) => (
                   <FeatureView {...feature} key={feature.heading} />
                 ))}
@@ -192,9 +160,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
             )}
           </article>
 
-          {moreProjects && moreProjects.length > 0 && (
-            <Projects projects={moreProjects} cols={4} />
-          )}
+          {moreProjects && moreProjects.length > 0 && <Projects projects={moreProjects} cols={4} />}
           <NumbersView numbers={project?.numbers} />
         </>
       )}

@@ -2,10 +2,7 @@ const { ServerClient: PostmarkClient } = require('postmark')
 const postmark = new PostmarkClient(process.env.POSTMARK_API_KEY)
 import { NextApiResponse, NextApiRequest } from 'next'
 
-export default async function sendEmail(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
   try {
     let { email, name, company, message } = JSON.parse(req.body)
     await postmark.sendEmailBatchWithTemplates([

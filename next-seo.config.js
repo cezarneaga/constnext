@@ -2,7 +2,7 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    site_name: 'constNEXT',
+    site_name: 'const NEXT',
   },
   twitter: {
     handle: '@cezarneaga',

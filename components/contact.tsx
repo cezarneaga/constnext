@@ -29,40 +29,28 @@ export function Contact() {
   const firstLineColor = useColorModeValue('gray.900', 'white')
   return (
     <Flex
-      flexDirection="column"
+      flexDirection='column'
       backgroundColor={bgColor}
-      width="100%"
-      height="auto"
-      m="0"
-      px="4"
-      alignItems="stretch"
-      overflow="hidden">
-      <Box width="100%" maxW="780px" mx="auto" py="8">
+      width='100%'
+      height='auto'
+      m='0'
+      px='4'
+      alignItems='stretch'
+      overflow='hidden'>
+      <Box width='100%' maxW='780px' mx='auto' py='8'>
         <NewlineText
           text={`Let's start something together \nSay hello!`}
           firstLineColor={firstLineColor}
-          textTransform="uppercase"
-          lineHeight="1.5em"
-          textAlign="center"
+          textTransform='uppercase'
+          lineHeight='1.5em'
+          textAlign='center'
         />
         <Formik
           initialValues={initialValues}
           validationSchema={yup.object().shape({
-            name: yup
-              .string()
-              .min(3, 'Your name is probably longer than ${min}')
-              .required('Required!'),
-            email: yup
-              .string()
-              .email("That's not an email")
-              .required('Required!'),
-            message: yup
-              .string()
-              .min(
-                140,
-                'Please add a few more words than a ${min} character tweet'
-              )
-              .required('Required!'),
+            name: yup.string().min(3, 'Your name is probably longer than ${min}').required('Required!'),
+            email: yup.string().email("That's not an email").required('Required!'),
+            message: yup.string().min(140, 'Please add a few more words than a ${min} character tweet').required('Required!'),
           })}
           onSubmit={async (values, { resetForm }) => {
             if (values.url !== '') return
@@ -104,169 +92,113 @@ export function Contact() {
             }
           }}>
           {({ isSubmitting }) => (
-            <Form data-splitbee-event="contact form submitted">
-              <Field name="name">
+            <Form data-splitbee-event='contact form submitted'>
+              <Field name='name'>
                 {({ field, form }: FieldProps) => (
-                  <FormControl
-                    isRequired
-                    isInvalid={Boolean(form.errors.name && form.touched.name)}>
-                    <InputGroup variant="flushed" colorScheme="brand" mt="8">
+                  <FormControl isRequired isInvalid={Boolean(form.errors.name && form.touched.name)}>
+                    <InputGroup variant='flushed' colorScheme='brand' mt='8'>
                       <FormLabel
-                        htmlFor="name"
-                        position="absolute"
-                        left="-10000px"
-                        top="auto"
-                        width="1"
-                        height="1"
-                        overflow="hidden">
+                        htmlFor='name'
+                        position='absolute'
+                        left='-10000px'
+                        top='auto'
+                        width='1'
+                        height='1'
+                        overflow='hidden'>
                         Your name
                       </FormLabel>
-                      <Input {...field} id="name" placeholder="Your name" />
-                      <InputRightElement
-                        color="white"
-                        children={
-                          !form.errors.name && form.touched.name && <Check />
-                        }
-                      />
+                      <Input {...field} id='name' placeholder='Your name' />
+                      <InputRightElement color='white' children={!form.errors.name && form.touched.name && <Check />} />
                     </InputGroup>
-                    <FormErrorMessage color="red.600" marginRight="2">
-                      <AlertTriangle size={14} style={{ marginRight: 10 }} />{' '}
-                      {form.errors.name}
+                    <FormErrorMessage color='red.600' marginRight='2'>
+                      <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.name}
                     </FormErrorMessage>
                   </FormControl>
                 )}
               </Field>
-              <Field name="company">
+              <Field name='company'>
                 {({ field, form }: FieldProps) => (
-                  <FormControl
-                    isRequired
-                    isInvalid={Boolean(
-                      form.errors.company && form.touched.company
-                    )}>
-                    <InputGroup variant="flushed" colorScheme="brand" mt="8">
+                  <FormControl isRequired isInvalid={Boolean(form.errors.company && form.touched.company)}>
+                    <InputGroup variant='flushed' colorScheme='brand' mt='8'>
                       <FormLabel
-                        htmlFor="company"
-                        position="absolute"
-                        left="-10000px"
-                        top="auto"
-                        width="1"
-                        height="1"
-                        overflow="hidden">
+                        htmlFor='company'
+                        position='absolute'
+                        left='-10000px'
+                        top='auto'
+                        width='1'
+                        height='1'
+                        overflow='hidden'>
                         Your company
                       </FormLabel>
-                      <Input
-                        {...field}
-                        id="company"
-                        placeholder="Your company"
-                      />
-                      <InputRightElement
-                        color="white"
-                        children={
-                          !form.errors.company &&
-                          form.touched.company && <Check />
-                        }
-                      />
+                      <Input {...field} id='company' placeholder='Your company' />
+                      <InputRightElement color='white' children={!form.errors.company && form.touched.company && <Check />} />
                     </InputGroup>
-                    <FormErrorMessage color="red.600" marginRight="2">
-                      <AlertTriangle size={14} style={{ marginRight: 10 }} />{' '}
-                      {form.errors.company}
+                    <FormErrorMessage color='red.600' marginRight='2'>
+                      <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.company}
                     </FormErrorMessage>
                   </FormControl>
                 )}
               </Field>
-              <Field name="url">
-                {({ field }: FieldProps) => (
-                  <Input
-                    {...field}
-                    id="url"
-                    placeholder="Your url"
-                    style={{ display: 'none' }}
-                  />
-                )}
+              <Field name='url'>
+                {({ field }: FieldProps) => <Input {...field} id='url' placeholder='Your url' style={{ display: 'none' }} />}
               </Field>
-              <Field name="email">
+              <Field name='email'>
                 {({ field, form }: FieldProps) => (
-                  <FormControl
-                    isRequired
-                    isInvalid={Boolean(
-                      form.errors.email && form.touched.email
-                    )}>
-                    <InputGroup variant="flushed" colorScheme="brand" mt="8">
+                  <FormControl isRequired isInvalid={Boolean(form.errors.email && form.touched.email)}>
+                    <InputGroup variant='flushed' colorScheme='brand' mt='8'>
                       <FormLabel
-                        htmlFor="email"
-                        position="absolute"
-                        left="-10000px"
-                        top="auto"
-                        width="1"
-                        height="1"
-                        overflow="hidden">
+                        htmlFor='email'
+                        position='absolute'
+                        left='-10000px'
+                        top='auto'
+                        width='1'
+                        height='1'
+                        overflow='hidden'>
                         Your email
                       </FormLabel>
-                      <Input {...field} id="email" placeholder="Your email" />
-                      <InputRightElement
-                        color="white"
-                        children={
-                          !form.errors.email && form.touched.email && <Check />
-                        }
-                      />
+                      <Input {...field} id='email' placeholder='Your email' />
+                      <InputRightElement color='white' children={!form.errors.email && form.touched.email && <Check />} />
                     </InputGroup>
-                    <FormErrorMessage color="red.600" marginRight="2">
-                      <AlertTriangle size={14} style={{ marginRight: 10 }} />{' '}
-                      {form.errors.email}
+                    <FormErrorMessage color='red.600' marginRight='2'>
+                      <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.email}
                     </FormErrorMessage>
                   </FormControl>
                 )}
               </Field>
-              <Field name="message">
+              <Field name='message'>
                 {({ field, form }: FieldProps) => (
-                  <FormControl
-                    isRequired
-                    isInvalid={Boolean(
-                      form.errors.message && form.touched.message
-                    )}>
-                    <InputGroup variant="flushed" colorScheme="brand" mt="8">
+                  <FormControl isRequired isInvalid={Boolean(form.errors.message && form.touched.message)}>
+                    <InputGroup variant='flushed' colorScheme='brand' mt='8'>
                       <FormLabel
-                        htmlFor="message"
-                        position="absolute"
-                        left="-10000px"
-                        top="auto"
-                        width="1"
-                        height="1"
-                        overflow="hidden">
+                        htmlFor='message'
+                        position='absolute'
+                        left='-10000px'
+                        top='auto'
+                        width='1'
+                        height='1'
+                        overflow='hidden'>
                         Your message
                       </FormLabel>
-                      <Textarea
-                        {...field}
-                        id="message"
-                        placeholder="Your message"
-                        rows={5}
-                        pr="8"
-                      />
-                      <InputRightElement
-                        color="white"
-                        children={
-                          !form.errors.name && form.touched.name && <Check />
-                        }
-                      />
+                      <Textarea {...field} id='message' placeholder='Your message' rows={5} pr='8' />
+                      <InputRightElement color='white' children={!form.errors.name && form.touched.name && <Check />} />
                     </InputGroup>
-                    <FormErrorMessage color="red.600" marginRight="2">
-                      <AlertTriangle size={14} style={{ marginRight: 10 }} />{' '}
-                      {form.errors.message}
+                    <FormErrorMessage color='red.600' marginRight='2'>
+                      <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.message}
                     </FormErrorMessage>
                   </FormControl>
                 )}
               </Field>
               <Button
-                type="submit"
-                variant="outline"
+                type='submit'
+                variant='outline'
                 isLoading={isSubmitting}
-                colorScheme="gray"
+                colorScheme='gray'
                 // color="gray.700"
                 // fontWeight={600}
                 // _hover={{ color: 'gray.700', backgroundColor: 'white' }}
-                size="lg"
-                mt="8"
-                ml="calc(100% - 120px)">
+                size='lg'
+                mt='8'
+                ml='calc(100% - 120px)'>
                 Submit
               </Button>
             </Form>

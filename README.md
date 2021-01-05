@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://github.com/cezarneaga/constnext" title="constNEXT">
+  <a href="https://github.com/cezarneaga/constnext" title="const NEXT">
     <img
       src="https://constnext.com/images/logo.svg"
       height="50"
-      alt="constNEXT"
+      alt="const NEXT"
     />
   </a>
 </p>

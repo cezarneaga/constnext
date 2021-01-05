@@ -12,7 +12,7 @@ export function Footer({ preview }: { preview: boolean }) {
         </Flex>
         <Flex alignItems='center' justifyContent={['center', 'center', 'flex-start']}>
           <Text color='gray.300' textAlign='center' width='100%'>
-            &copy; constNEXT - {year}
+            &copy; const NEXT - {year}
           </Text>
         </Flex>
         <Flex alignItems='center' justifyContent={['center', 'center', 'flex-end']}>

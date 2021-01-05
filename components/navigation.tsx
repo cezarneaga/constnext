@@ -36,7 +36,7 @@ export function Navigation() {
       color={color}>
       <Flex align='center' flexGrow={1}>
         <InternalLink href='/' className='logo' marginRight='auto'>
-          <Image src='/images/nav-logo.png' alt='constNEXT - Click to go back home' width={70} height={40} layout='fixed' />
+          <Image src='/images/nav-logo.png' alt='const NEXT - Click to go back home' width={70} height={40} layout='fixed' />
         </InternalLink>
       </Flex>
 

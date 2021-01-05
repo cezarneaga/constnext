@@ -9,21 +9,18 @@ export async function fetchGraphQL(
   variables?: { [key: string]: string | number | boolean },
   preview?: boolean
 ) {
-  const result = await fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${space}`,
-    {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `Bearer ${preview ? previewToken : publicToken}`,
-      },
-      body: JSON.stringify({
-        query: query,
-        variables: variables,
-        operationName: operationName,
-      }),
-    }
-  )
+  const result = await fetch(`https://graphql.contentful.com/content/v1/spaces/${space}`, {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      authorization: `Bearer ${preview ? previewToken : publicToken}`,
+    },
+    body: JSON.stringify({
+      query: query,
+      variables: variables,
+      operationName: operationName,
+    }),
+  })
   const json = await result.json()
 
   if (!!json.errors) {
@@ -44,31 +41,12 @@ export function extractProjectEntries(fetchResponse: { data: any }) {
 }
 
 export async function getProjects(limit: number, preview: boolean) {
-  const entries = await fetchGraphQL(
-    operationsDoc,
-    'ProjectList',
-    { limit },
-    preview
-  )
+  const entries = await fetchGraphQL(operationsDoc, 'ProjectList', { limit }, preview)
   return extractProjectEntries(entries)
 }
-export async function getProjectBySlug(
-  slug: string,
-  limit: number,
-  preview: boolean
-) {
-  const entry = await fetchGraphQL(
-    operationsDoc,
-    'ProjectBySlug',
-    { slug, preview },
-    preview
-  )
-  const entries = await fetchGraphQL(
-    operationsDoc,
-    'MoreProjects',
-    { slug, limit },
-    preview
-  )
+export async function getProjectBySlug(slug: string, limit: number, preview: boolean) {
+  const entry = await fetchGraphQL(operationsDoc, 'ProjectBySlug', { slug, preview }, preview)
+  const entries = await fetchGraphQL(operationsDoc, 'MoreProjects', { slug, limit }, preview)
   return {
     project: extractProject(entry),
     moreProjects: extractProjectEntries(entries),

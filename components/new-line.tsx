@@ -11,9 +11,7 @@ export const NewlineText = ({ text, firstLineColor, ...rest }: Props) => {
       <Heading {...rest} color={firstLineColor}>
         {one}
       </Heading>
-      <Heading
-        {...rest}
-        color={firstLineColor === 'white' ? opositeColor : 'white'}>
+      <Heading {...rest} color={firstLineColor === 'white' ? opositeColor : 'white'}>
         {two}
       </Heading>
     </>

@@ -1,10 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { getPreviewProjectBySlug } from 'lib/api'
 
-export default async function preview(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function preview(req: NextApiRequest, res: NextApiResponse) {
   const { secret, slug } = req.query
 
   if (secret !== process.env.NEXT_PUBLIC_CONTENTFUL_PREVIEW_SECRET || !slug) {

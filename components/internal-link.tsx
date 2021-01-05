@@ -19,10 +19,7 @@ export type InternalLinkProps =
     }
 
 export const InternalLink = forwardRef<HTMLAnchorElement, InternalLinkProps>(
-  (
-    { href, shallow, children, prefetch, replace, scroll, linkAs, ...rest },
-    forwardRef
-  ) => {
+  ({ href, shallow, children, prefetch, replace, scroll, linkAs, ...rest }, forwardRef) => {
     const linkProps: NextLinkProps = {
       as: linkAs,
       href,
@@ -37,11 +34,7 @@ export const InternalLink = forwardRef<HTMLAnchorElement, InternalLinkProps>(
 
     return (
       <NextLink {...linkProps} passHref>
-        <ChakraLink
-          {...rest}
-          ref={forwardRef}
-          aria-current={isActive ? 'page' : undefined}
-          _hover={{ textDecoration: 'none' }}>
+        <ChakraLink {...rest} ref={forwardRef} aria-current={isActive ? 'page' : undefined} _hover={{ textDecoration: 'none' }}>
           {children}
         </ChakraLink>
       </NextLink>

@@ -30,11 +30,11 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' *.vercel-insights.com;
   child-src ;
-  style-src 'self' *.googleapis.com;
+  style-src 'self' 'unsafe-inline' *.googleapis.com;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
-  font-src 'self' *.gstatic.com;
+  font-src 'self' 'unsafe-inline' *.gstatic.com;
 `
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP

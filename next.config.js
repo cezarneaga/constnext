@@ -28,13 +28,13 @@ module.exports = {
 }
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.vercel-insights.com;
+  script-src 'self' *.vercel-insights.com;
   child-src ;
-  style-src 'self' 'unsafe-inline' *.googleapis.com;
+  style-src 'self' *.googleapis.com;
   img-src * blob: data:;
   media-src 'none';
   connect-src *;
-  font-src 'self' 'unsafe-inline' *.gstatic.com;
+  font-src 'self' *.gstatic.com;
 `
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -45,7 +45,7 @@ const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
   {
     key: 'Referrer-Policy',
-    value: 'origin-when-cross-origin',
+    value: 'strict-origin-when-cross-origin',
   },
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   {

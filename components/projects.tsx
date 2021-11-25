@@ -28,7 +28,7 @@ export function Projects({ projects, cols }: Props) {
         </Grid>
         <Box maxW={['100%', '80%', '50%']} mx='auto' textAlign='center'>
           <InternalLink href='/projects' title='see all projects'>
-            <Button variant='outline' colorScheme='brand'>
+            <Button variant='outline' colorScheme='gray.700'>
               All projects
             </Button>
           </InternalLink>

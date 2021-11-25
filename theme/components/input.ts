@@ -49,7 +49,8 @@ const variants = { flushed: variantFlushed }
 const defaultProps = {
   variant: 'flushed',
 }
-export default {
+const Input = {
   variants,
   defaultProps,
 }
+export default Input

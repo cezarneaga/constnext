@@ -10,7 +10,8 @@ const defaultProps = {
   variant: 'flushed',
 }
 
-export default {
+const Textarea = {
   variants,
   defaultProps,
 }
+export default Textarea

@@ -14,6 +14,7 @@ import {
   useToast,
   FormLabel,
   useColorModeValue,
+  color,
 } from '@chakra-ui/react'
 import { NewlineText } from './new-line'
 const initialValues = {
@@ -80,7 +81,7 @@ export function Contact() {
                   isClosable: true,
                 })
               }
-            } catch (err:any) {
+            } catch (err: any) {
               toast({
                 title: 'Your email was not sent!',
                 description: `This is the error: (${err.message}).
@@ -93,118 +94,154 @@ export function Contact() {
           }}>
           {({ isSubmitting }) => (
             <Form data-splitbee-event='contact form submitted'>
-              <Field name='name'>
-                {({ field, form }: FieldProps) => (
-                  <FormControl isRequired isInvalid={Boolean(form.errors.name && form.touched.name)}>
-                    <InputGroup variant='flushed' colorScheme='brand' mt='8'>
-                      <FormLabel
-                        htmlFor='name'
-                        position='absolute'
-                        left='-10000px'
-                        top='auto'
-                        width='1'
-                        height='1'
-                        overflow='hidden'>
-                        Your name
-                      </FormLabel>
-                      <Input {...field} id='name' placeholder='Your name' />
-                      <InputRightElement color='white'>
-                      {!form.errors.name && form.touched.name && <Check />}
-                      </InputRightElement>
-                    </InputGroup>
-                    <FormErrorMessage color='red.600' marginRight='2'>
-                      <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.name}
-                    </FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Field name='company'>
-                {({ field, form }: FieldProps) => (
-                  <FormControl isRequired isInvalid={Boolean(form.errors.company && form.touched.company)}>
-                    <InputGroup variant='flushed' colorScheme='brand' mt='8'>
-                      <FormLabel
-                        htmlFor='company'
-                        position='absolute'
-                        left='-10000px'
-                        top='auto'
-                        width='1'
-                        height='1'
-                        overflow='hidden'>
-                        Your company
-                      </FormLabel>
-                      <Input {...field} id='company' placeholder='Your company' />
-                      <InputRightElement color='white'>
-                      {!form.errors.company && form.touched.company && <Check />}
-                      </InputRightElement>
-                    </InputGroup>
-                    <FormErrorMessage color='red.600' marginRight='2'>
-                      <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.company}
-                    </FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Field name='url'>
-                {({ field }: FieldProps) => <Input {...field} id='url' placeholder='Your url' style={{ display: 'none' }} />}
-              </Field>
-              <Field name='email'>
-                {({ field, form }: FieldProps) => (
-                  <FormControl isRequired isInvalid={Boolean(form.errors.email && form.touched.email)}>
-                    <InputGroup variant='flushed' colorScheme='brand' mt='8'>
-                      <FormLabel
-                        htmlFor='email'
-                        position='absolute'
-                        left='-10000px'
-                        top='auto'
-                        width='1'
-                        height='1'
-                        overflow='hidden'>
-                        Your email
-                      </FormLabel>
-                      <Input {...field} id='email' placeholder='Your email' />
-                      <InputRightElement color='white' >{!form.errors.email && form.touched.email && <Check />}</InputRightElement>
-                    </InputGroup>
-                    <FormErrorMessage color='red.600' marginRight='2'>
-                      <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.email}
-                    </FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Field name='message'>
-                {({ field, form }: FieldProps) => (
-                  <FormControl isRequired isInvalid={Boolean(form.errors.message && form.touched.message)}>
-                    <InputGroup variant='flushed' colorScheme='brand' mt='8'>
-                      <FormLabel
-                        htmlFor='message'
-                        position='absolute'
-                        left='-10000px'
-                        top='auto'
-                        width='1'
-                        height='1'
-                        overflow='hidden'>
-                        Your message
-                      </FormLabel>
-                      <Textarea {...field} id='message' placeholder='Your message' rows={5} pr='8' />
-                      <InputRightElement color='white' >{!form.errors.name && form.touched.name && <Check />}</InputRightElement>
-                    </InputGroup>
-                    <FormErrorMessage color='red.600' marginRight='2'>
-                      <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.message}
-                    </FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Button
-                type='submit'
-                variant='outline'
-                isLoading={isSubmitting}
-                colorScheme='gray'
-                // color="gray.700"
-                // fontWeight={600}
-                // _hover={{ color: 'gray.700', backgroundColor: 'white' }}
-                size='lg'
-                mt='8'
-                ml='calc(100% - 120px)'>
-                Submit
-              </Button>
+              <Flex direction='column'>
+                <Field name='name'>
+                  {({ field, form }: FieldProps) => (
+                    <FormControl isRequired isInvalid={Boolean(form.errors.name && form.touched.name)}>
+                      <InputGroup variant='flushed' colorScheme='brand' mt='8'>
+                        <FormLabel
+                          htmlFor='name'
+                          position='absolute'
+                          left='-10000px'
+                          top='auto'
+                          width='1'
+                          height='1'
+                          overflow='hidden'>
+                          Your name
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id='name'
+                          placeholder='Your name'
+                          _placeholder={{ color: 'white', fontWeight: 'bold' }}
+                          color='white'
+                          borderColor='white'
+                          _focus={{ borderColor: 'white' }}
+                        />
+                        <InputRightElement color='white'>{!form.errors.name && form.touched.name && <Check />}</InputRightElement>
+                      </InputGroup>
+                      <FormErrorMessage color='red.600' marginRight='2'>
+                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.name}
+                      </FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Field name='company'>
+                  {({ field, form }: FieldProps) => (
+                    <FormControl isRequired isInvalid={Boolean(form.errors.company && form.touched.company)}>
+                      <InputGroup variant='flushed' colorScheme='brand' mt='8'>
+                        <FormLabel
+                          htmlFor='company'
+                          position='absolute'
+                          left='-10000px'
+                          top='auto'
+                          width='1'
+                          height='1'
+                          overflow='hidden'>
+                          Your company
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id='company'
+                          placeholder='Your company'
+                          _placeholder={{ color: 'white', fontWeight: 'bold' }}
+                          color='white'
+                          borderColor='white'
+                          _focus={{ borderColor: 'white' }}
+                        />
+                        <InputRightElement color='white'>
+                          {!form.errors.company && form.touched.company && <Check />}
+                        </InputRightElement>
+                      </InputGroup>
+                      <FormErrorMessage color='red.600' marginRight='2'>
+                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.company}
+                      </FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Field name='url'>
+                  {({ field }: FieldProps) => <Input {...field} id='url' placeholder='Your url' style={{ display: 'none' }} />}
+                </Field>
+                <Field name='email'>
+                  {({ field, form }: FieldProps) => (
+                    <FormControl isRequired isInvalid={Boolean(form.errors.email && form.touched.email)}>
+                      <InputGroup variant='flushed' colorScheme='brand' mt='8'>
+                        <FormLabel
+                          htmlFor='email'
+                          position='absolute'
+                          left='-10000px'
+                          top='auto'
+                          width='1'
+                          height='1'
+                          overflow='hidden'>
+                          Your email
+                        </FormLabel>
+                        <Input
+                          {...field}
+                          id='email'
+                          placeholder='Your email'
+                          _placeholder={{ color: 'white', fontWeight: 'bold' }}
+                          color='white'
+                          borderColor='white'
+                          _focus={{ borderColor: 'white' }}
+                        />
+                        <InputRightElement color='white'>
+                          {!form.errors.email && form.touched.email && <Check />}
+                        </InputRightElement>
+                      </InputGroup>
+                      <FormErrorMessage color='red.600' marginRight='2'>
+                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.email}
+                      </FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Field name='message'>
+                  {({ field, form }: FieldProps) => (
+                    <FormControl isRequired isInvalid={Boolean(form.errors.message && form.touched.message)}>
+                      <InputGroup variant='flushed' colorScheme='brand' mt='8'>
+                        <FormLabel
+                          htmlFor='message'
+                          position='absolute'
+                          left='-10000px'
+                          top='auto'
+                          width='1'
+                          height='1'
+                          overflow='hidden'>
+                          Your message
+                        </FormLabel>
+                        <Textarea
+                          {...field}
+                          id='message'
+                          placeholder='Your message'
+                          rows={5}
+                          pr='8'
+                          color='white'
+                          _placeholder={{ color: 'white', fontWeight: 'bold' }}
+                          borderColor='white'
+                          _focus={{ borderColor: 'white' }}
+                        />
+                        <InputRightElement color='white'>{!form.errors.name && form.touched.name && <Check />}</InputRightElement>
+                      </InputGroup>
+                      <FormErrorMessage color='red.600' marginRight='2'>
+                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.message}
+                      </FormErrorMessage>
+                    </FormControl>
+                  )}
+                </Field>
+                <Button
+                  type='submit'
+                  variant='outline'
+                  isLoading={isSubmitting}
+                  colorScheme='gray'
+                  color='white'
+                  _hover={{ color: 'gray.700', backgroundColor: 'white' }}
+                  size='lg'
+                  mt='8'
+                  width='120px'
+                  alignSelf='end'>
+                  Submit
+                </Button>
+              </Flex>
             </Form>
           )}
         </Formik>

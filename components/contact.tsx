@@ -80,7 +80,7 @@ export function Contact() {
                   isClosable: true,
                 })
               }
-            } catch (err) {
+            } catch (err:any) {
               toast({
                 title: 'Your email was not sent!',
                 description: `This is the error: (${err.message}).
@@ -108,7 +108,9 @@ export function Contact() {
                         Your name
                       </FormLabel>
                       <Input {...field} id='name' placeholder='Your name' />
-                      <InputRightElement color='white' children={!form.errors.name && form.touched.name && <Check />} />
+                      <InputRightElement color='white'>
+                      {!form.errors.name && form.touched.name && <Check />}
+                      </InputRightElement>
                     </InputGroup>
                     <FormErrorMessage color='red.600' marginRight='2'>
                       <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.name}
@@ -131,7 +133,9 @@ export function Contact() {
                         Your company
                       </FormLabel>
                       <Input {...field} id='company' placeholder='Your company' />
-                      <InputRightElement color='white' children={!form.errors.company && form.touched.company && <Check />} />
+                      <InputRightElement color='white'>
+                      {!form.errors.company && form.touched.company && <Check />}
+                      </InputRightElement>
                     </InputGroup>
                     <FormErrorMessage color='red.600' marginRight='2'>
                       <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.company}
@@ -157,7 +161,7 @@ export function Contact() {
                         Your email
                       </FormLabel>
                       <Input {...field} id='email' placeholder='Your email' />
-                      <InputRightElement color='white' children={!form.errors.email && form.touched.email && <Check />} />
+                      <InputRightElement color='white' >{!form.errors.email && form.touched.email && <Check />}</InputRightElement>
                     </InputGroup>
                     <FormErrorMessage color='red.600' marginRight='2'>
                       <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.email}
@@ -180,7 +184,7 @@ export function Contact() {
                         Your message
                       </FormLabel>
                       <Textarea {...field} id='message' placeholder='Your message' rows={5} pr='8' />
-                      <InputRightElement color='white' children={!form.errors.name && form.touched.name && <Check />} />
+                      <InputRightElement color='white' >{!form.errors.name && form.touched.name && <Check />}</InputRightElement>
                     </InputGroup>
                     <FormErrorMessage color='red.600' marginRight='2'>
                       <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.message}

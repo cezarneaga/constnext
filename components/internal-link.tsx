@@ -17,7 +17,7 @@ export type InternalLinkProps =
     Omit<NextLinkProps, 'passHref' | 'as'> & {
       linkAs?: NextLinkProps['as']
     }
-
+// eslint-disable-next-line
 export const InternalLink = forwardRef<HTMLAnchorElement, InternalLinkProps>(
   ({ href, shallow, children, prefetch, replace, scroll, linkAs, ...rest }, forwardRef) => {
     const linkProps: NextLinkProps = {

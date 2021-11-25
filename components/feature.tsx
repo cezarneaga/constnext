@@ -5,6 +5,7 @@ import { Feature } from 'lib/contentTypes'
 export function FeatureView({ imageLeft, backgroundColor, image, heading, description, bottomSpacer }: Feature) {
   const bgColor = useColorModeValue('white', 'gray.800')
   const color = useColorModeValue('gray.700', 'white')
+  const spacerColor = useColorModeValue('brand.400', 'gray.800')
   return (
     <Flex
       flexDirection={['column', 'column', imageLeft ? 'row-reverse' : 'row']}
@@ -31,7 +32,7 @@ export function FeatureView({ imageLeft, backgroundColor, image, heading, descri
           {description}
         </Heading>
       </Flex>
-      {bottomSpacer && <Box bgColor={useColorModeValue('brand.400', 'gray.800')} height={[0, 0, '4em']} />}
+      {bottomSpacer && <Box bgColor={spacerColor} height={[0, 0, '4em']} />}
     </Flex>
   )
 }

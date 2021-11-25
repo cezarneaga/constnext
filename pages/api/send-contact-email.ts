@@ -30,7 +30,7 @@ export default async function sendEmail(req: NextApiRequest, res: NextApiRespons
     ])
 
     res.status(200).json({ status: 200, message: 'Message sent' })
-  } catch ({ status = 500, message }) {
-    res.status(status).json({ status, message })
+  } catch ({ status = 500, message }: any) {
+    res.status(status as number).json({ status, message })
   }
 }

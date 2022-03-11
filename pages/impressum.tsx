@@ -1,10 +1,8 @@
 import { NextSeo } from 'next-seo'
-import { getProjects } from '../lib/api'
 import { Project } from '../lib/contentTypes'
 import Layout from 'components/layout'
 import { Hero } from 'components/hero'
-import { Services } from 'components/services'
-import { Projects } from 'components/projects'
+import { Impressum } from 'components/impressum'
 import { Contact } from 'components/contact'
 
 function Home({ preview, projects }: { preview: boolean; projects: Project[] }) {
@@ -12,11 +10,11 @@ function Home({ preview, projects }: { preview: boolean; projects: Project[] }) 
     <Layout preview={preview}>
       <NextSeo
         title='const NEXT - Simplify, Create, Amaze'
-        description='Professional web & app development for people and organisations that have a positive impact in the society.'
-        canonical='https://constnext.com'
+        description='Details of incorporation'
+        canonical='https://constnext.com/impressum'
         openGraph={{
-          url: 'https://constnext.com',
-          title: 'const NEXT - Simplify, Create, Amaze',
+          url: 'https://constnext.com/impressum',
+          title: 'Impressum - Simplify, Create, Amaze',
           description:
             'Professional web & app development for people and organisations that have a positive impact in the society.',
           images: [
@@ -24,7 +22,7 @@ function Home({ preview, projects }: { preview: boolean; projects: Project[] }) 
               url: 'https://images.ctfassets.net/voxe5faf7baw/15bf3tWfqEWQbHmMqd0Xan/49199ff6464d5c54126c1677a706c99b/cn-home.png',
               width: 1300,
               height: 1041,
-              alt: 'const NEXT Homepage',
+              alt: 'const NEXT Impressum',
             },
           ],
         }}
@@ -34,20 +32,9 @@ function Home({ preview, projects }: { preview: boolean; projects: Project[] }) 
         description='Professional web & app development for people and organisations that have a positive impact in the society.'
         // actionLink="/about"
       />
-      <Services />
-      <Projects projects={projects} cols={3} />
+      <Impressum />
       <Contact />
     </Layout>
   )
-}
-
-export async function getStaticProps({ preview = false }) {
-  const projects = await getProjects(3, preview)
-  return {
-    props: {
-      preview,
-      projects,
-    },
-  }
 }
 export default Home

@@ -1,7 +1,7 @@
 import { Heading, Button, Grid, Flex, Box, useColorModeValue } from '@chakra-ui/react'
 import { ProjectCard } from 'components/project-card'
 import { Project } from '../lib/contentTypes'
-import { InternalLink } from 'components/internal-link'
+import { Link } from '@chakra-ui/next-js'
 type Props = {
   projects: Project[]
   cols: number
@@ -27,11 +27,11 @@ export function Projects({ projects, cols }: Props) {
           ))}
         </Grid>
         <Box maxW={['100%', '80%', '50%']} mx='auto' textAlign='center'>
-          <InternalLink href='/projects' title='see all projects'>
+          <Link href='/projects' title='see all projects'>
             <Button variant='outline' colorScheme='gray.700'>
               All projects
             </Button>
-          </InternalLink>
+          </Link>
         </Box>
       </Box>
     </Flex>

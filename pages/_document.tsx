@@ -10,7 +10,6 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <script async data-api='/_hive' src='/bee.js'></script>
           <link rel='icon' href='/images/favicon.ico' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link

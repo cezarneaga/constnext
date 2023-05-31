@@ -9,29 +9,31 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.7.2",
-    "@contentful/rich-text-react-renderer": "^14.1.2",
-    "@emotion/react": "^11.7.0",
-    "@emotion/styled": "^11.6.0",
-    "formik": "^2.2.9",
-    "framer-motion": "^5.4.4",
-    "next": "^12.0.7",
-    "next-seo": "^4.28.1",
-    "node-fetch": "^3.1.0",
-    "postmark": "^2.7.8",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-feather": "^2.0.9",
-    "yup": "^0.32.11"
+    "@chakra-ui/next-js": "^2.1.4",
+    "@chakra-ui/react": "^2.7.0",
+    "@contentful/rich-text-react-renderer": "^15.16.5",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@vercel/analytics": "^1.0.1",
+    "contentful": "^10.2.3",
+    "formik": "^2.4.0",
+    "framer-motion": "^10.12.16",
+    "next": "^13.4.4",
+    "next-seo": "^6.0.0",
+    "postmark": "^3.0.18",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-feather": "^2.0.10",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
-    "@types/node": "^16.11.12",
-    "@types/react": "^17.0.37",
-    "@types/yup": "^0.29.13",
-    "dotenv": "^10.0.0",
-    "eslint": "7",
-    "eslint-config-next": "12.0.7",
-    "prettier": "^2.5.1",
-    "typescript": "^4.5.2"
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
+    "@types/yup": "^0.32.0",
+    "dotenv": "^16.1.2",
+    "eslint": "8.41.0",
+    "eslint-config-next": "13.4.4",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
   }
 }

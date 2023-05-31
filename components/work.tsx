@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text, Button, Center, useColorModeValue } from '@chakra-ui/react'
 import Image from 'next/image'
-import { InternalLink } from 'components/internal-link'
+import { Link } from '@chakra-ui/next-js'
 import { Project } from 'lib/contentTypes'
 import { twoDigits } from 'utils/two-digits'
 type Props = {
@@ -33,7 +33,7 @@ export function Work({ index, project }: Props) {
         <Text fontSize='18px' lineHeight='1.5em' color={textColor}>
           {project.description}
         </Text>
-        <InternalLink href={`/projects/${project.slug}`} my={['4', '4', '4', '12']}>
+        <Link href={`/projects/${project.slug}`} my={['4', '4', '4', '12']}>
           <Button
             colorScheme='brand'
             _hover={{ color: 'gray.700', backgroundColor: 'white' }}
@@ -41,10 +41,10 @@ export function Work({ index, project }: Props) {
             borderWidth='4px'>
             View Project
           </Button>
-        </InternalLink>
+        </Link>
       </Center>
       <Box width={['100%', '100%', '50%', '50%', '50%']} height='100%'>
-        <Image src={project.image.url} alt={project.image.title} width={624} height={500} layout='responsive' />
+        <Image src={project.image.url} alt={project.image.title || ''} width={624} height={500} />
       </Box>
     </Flex>
   )

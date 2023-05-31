@@ -1,6 +1,6 @@
 import { Zap } from 'react-feather'
-import { InternalLink } from './internal-link'
+import { Link } from '@chakra-ui/next-js'
 
 export function Alert({ preview }: { preview: boolean }) {
-  return <>{preview && <InternalLink href='/api/exit-preview'>Click here</InternalLink>}</>
+  return <>{preview && <Link href='/api/exit-preview'>Click here</Link>}</>
 }

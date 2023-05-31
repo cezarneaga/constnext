@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import { Flex, Box, IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react'
-import { InternalLink } from 'components/internal-link'
+import { Link } from '@chakra-ui/next-js'
 import Image from 'next/image'
 import { Menu, Moon, Sun, X } from 'react-feather'
 
@@ -35,9 +35,9 @@ export function Navigation() {
       wrap='wrap'
       color={color}>
       <Flex align='center' flexGrow={1}>
-        <InternalLink href='/' className='logo' marginRight='auto'>
-          <Image src='/images/nav-logo.png' alt='const NEXT - Click to go back home' width={70} height={40} layout='fixed' />
-        </InternalLink>
+        <Link href='/' className='logo' marginRight='auto'>
+          <Image src='/images/nav-logo.png' alt='const NEXT - Click to go back home' width={70} height={40} />
+        </Link>
       </Flex>
 
       <Box display={['block', 'block', 'none']} onClick={handleToggle}>
@@ -49,7 +49,7 @@ export function Navigation() {
         alignItems='center'
         textAlign='right'
         width={['full', 'full', 'auto']}>
-        <InternalLink
+        <Link
           my={[20, 12, 0]}
           ml={6}
           fontSize={['4xl', '2xl', 'md', 'md']}
@@ -59,16 +59,7 @@ export function Navigation() {
           borderColor='brand.400'
           href='/projects'>
           Projects
-        </InternalLink>
-        {/* <InternalLink
-          my={[20, 12, 0]}
-          ml={6}
-          fontSize={['4xl', '2xl', 'md', 'md']}
-          fontWeight="semibold"
-          display="block"
-          href="/about">
-          About
-        </InternalLink> */}
+        </Link>
         <IconButton
           ml={6}
           size='md'

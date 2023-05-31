@@ -36,10 +36,7 @@ export function Impressum() {
             Contact
           </Text>
           <Text>
-            <strong>Tel: </strong>+43 6764445906
-          </Text>
-          <Text>
-            <strong>E-Mail:</strong> cezar@constnext.com
+            <strong>E-Mail: </strong>cezar at constnext.com
           </Text>
           <Text>
             <strong>Web: </strong>constnext.com

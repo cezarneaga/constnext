@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, Text } from '@chakra-ui/react'
 import { Follow } from 'components/follow'
-import { InternalLink } from 'components/internal-link'
 import { Alert } from 'components/alert'
+import { Link } from '@chakra-ui/next-js'
 export function Footer({ preview }: { preview: boolean }) {
   const year = new Date().getFullYear()
   return (
@@ -16,9 +16,9 @@ export function Footer({ preview }: { preview: boolean }) {
           </Text>
         </Flex>
         <Flex alignItems='center' justifyContent={['center', 'center', 'flex-end']}>
-          <InternalLink href='/impressum' color='gray.300'>
+          <Link href='/impressum' color='gray.300'>
             Impressum
-          </InternalLink>
+          </Link>
           {process.env.NODE_ENV === 'development' && <Alert preview={preview} />}
         </Flex>
       </Grid>

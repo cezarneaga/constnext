@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { ArrowRightCircle } from 'react-feather'
 import { Flex, Heading } from '@chakra-ui/react'
 import { Project } from '../lib/contentTypes'
-import { InternalLink } from 'components/internal-link'
+import { Link } from '@chakra-ui/next-js'
 export function ProjectCard({ project, cols }: { project: Project; cols: number }) {
   const base = 320 * 0.8
   const sm = 320 * 0.8
@@ -11,8 +11,8 @@ export function ProjectCard({ project, cols }: { project: Project; cols: number 
   const xl = ((1280 - 16 * (cols - 1)) / cols) * 0.8
   return (
     <Flex key={project.slug} position='relative' height='100%' minH={[base, sm, md, lg, xl]} role='group'>
-      <InternalLink href={`/projects/${project.slug}`} height='100%' flex='1' title={project.title} position='relative'>
-        <Image src={project.image.url} alt={project.image.title} layout='fill' />
+      <Link href={`/projects/${project.slug}`} height='100%' flex='1' title={project.title} position='relative'>
+        <Image src={project.image.url} alt={project.image.title || ''} fill={true} />
         <Flex
           position='absolute'
           top='0'
@@ -32,7 +32,7 @@ export function ProjectCard({ project, cols }: { project: Project; cols: number 
             {project.title}
           </Heading>
         </Flex>
-      </InternalLink>
+      </Link>
     </Flex>
   )
 }

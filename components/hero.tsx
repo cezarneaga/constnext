@@ -1,6 +1,6 @@
 import { Info } from 'react-feather'
 import { Box, Button, Flex, Heading, List, ListItem, useColorModeValue } from '@chakra-ui/react'
-import { InternalLink } from 'components/internal-link'
+import { Link } from '@chakra-ui/next-js'
 import { NewlineText } from 'components/new-line'
 type Props = {
   title: string
@@ -45,11 +45,11 @@ export function Hero({ title, type, description, actionLink }: Props) {
           {description}
         </Heading>
         {actionLink && (
-          <InternalLink href={actionLink} title='About const NEXT'>
+          <Link href={actionLink} title='About const NEXT'>
             <Button mt='8' leftIcon={<Info size={14} />} variant='outline'>
               Learn more
             </Button>
-          </InternalLink>
+          </Link>
         )}
       </Box>
     </Flex>

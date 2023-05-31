@@ -53,7 +53,7 @@ export function Contact() {
             email: yup.string().email("That's not an email").required('Required!'),
             message: yup.string().min(140, 'Please add a few more words than a ${min} character tweet').required('Required!'),
           })}
-          onSubmit={async (values, { resetForm }) => {
+          onSubmit={async (values: any, { resetForm }: any) => {
             if (values.url !== '') return
             try {
               const response = await fetch('api/send-contact-email', {
@@ -92,7 +92,7 @@ export function Contact() {
               })
             }
           }}>
-          {({ isSubmitting }) => (
+          {({ isSubmitting }: any) => (
             <Form data-splitbee-event='contact form submitted'>
               <Flex direction='column'>
                 <Field name='name'>
@@ -121,7 +121,7 @@ export function Contact() {
                         <InputRightElement color='white'>{!form.errors.name && form.touched.name && <Check />}</InputRightElement>
                       </InputGroup>
                       <FormErrorMessage color='red.600' marginRight='2'>
-                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.name}
+                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.name as string}
                       </FormErrorMessage>
                     </FormControl>
                   )}
@@ -154,7 +154,7 @@ export function Contact() {
                         </InputRightElement>
                       </InputGroup>
                       <FormErrorMessage color='red.600' marginRight='2'>
-                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.company}
+                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.company as string}
                       </FormErrorMessage>
                     </FormControl>
                   )}
@@ -190,7 +190,7 @@ export function Contact() {
                         </InputRightElement>
                       </InputGroup>
                       <FormErrorMessage color='red.600' marginRight='2'>
-                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.email}
+                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.email as string}
                       </FormErrorMessage>
                     </FormControl>
                   )}
@@ -223,7 +223,7 @@ export function Contact() {
                         <InputRightElement color='white'>{!form.errors.name && form.touched.name && <Check />}</InputRightElement>
                       </InputGroup>
                       <FormErrorMessage color='red.600' marginRight='2'>
-                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.message}
+                        <AlertTriangle size={14} style={{ marginRight: 10 }} /> {form.errors.message as string}
                       </FormErrorMessage>
                     </FormControl>
                   )}

@@ -15,7 +15,7 @@ export function FeatureView({ imageLeft, backgroundColor, image, heading, descri
       overflow='hidden'
       bgColor={bgColor}>
       <Box width={['100%', '100%', '50%']} height={['auto', 'auto', '246px', '328px', '460px']}>
-        <Image src={image.url} alt={`${image.title} - ${image.description}`} width={720} height={460} layout='responsive' />
+        <Image src={image.url} alt={`${image.title} - ${image.description}`} width={720} height={460} />
       </Box>
       <Flex
         flexDirection='column'

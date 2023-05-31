@@ -1,5 +1,5 @@
-export const operationsDoc = `
-  query ProjectList($limit: Int!) {
+export const projectListDoc = `
+query ProjectList($limit: Int!) {
     projectCollection(limit: $limit) {
       items {
         sys{
@@ -20,9 +20,9 @@ export const operationsDoc = `
         }
       }
     }
-  }
-
-  query ProjectBySlug($slug: String!, $preview: Boolean!) {
+  }`
+export const projectsBySlugDoc = `
+query ProjectBySlug($slug: String!, $preview: Boolean!) {
     projectCollection(limit: 1, where: {slug: $slug}, preview: $preview) {
       items {
         sys{
@@ -66,12 +66,14 @@ export const operationsDoc = `
             imageLeft
             bottomSpacer
             backgroundColor
-            description 
+            description
           }
         }
       }
     }
   }
+`
+export const moreProjectsDoc = `
   query MoreProjects($slug: String!, $limit: Int!) {
     projectCollection(
       where: { slug_not_in: [$slug] }
@@ -97,6 +99,8 @@ export const operationsDoc = `
       }
     }
   }
+`
+export const allProjectsWithSlugsDoc = `
   query AllProjectsWithSlugs {
     projectCollection(
       where: { slug_exists: true }

@@ -1,18 +1,18 @@
-import { Document } from '@contentful/rich-text-types'
+import type { Document } from "@contentful/rich-text-types";
 
 export type RichText = {
-  json: Document
-}
+  json: Document;
+};
 
 export type Image = {
-  url: string
-  fileName?: string
-  description?: string
-  title?: string
-  width?: number
-  height?: number
-}
+  url: string;
+  fileName?: string;
+  description?: string;
+  title?: string;
+  width?: number;
+  height?: number;
+};
 
 export type Collection<T> = {
-  items: T[]
-}
+  items: T[];
+};

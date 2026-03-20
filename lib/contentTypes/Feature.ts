@@ -1,9 +1,9 @@
-import { Image } from './generic'
+import type { Image } from "./generic";
 export interface Feature {
-  heading: string
-  image: Image
-  imageLeft?: boolean
-  bottomSpacer?: boolean
-  backgroundColor?: string
-  description: string
+  heading: string;
+  image: Image;
+  imageLeft?: boolean;
+  bottomSpacer?: boolean;
+  backgroundColor?: string;
+  description: string;
 }

@@ -1,53 +1,53 @@
-import { NextSeo } from 'next-seo'
-import { getProjects } from '../lib/api'
-import { Project } from '../lib/contentTypes'
-import Layout from 'components/layout'
-import { Hero } from 'components/hero'
-import { Services } from 'components/services'
-import { Projects } from 'components/projects'
-import { Contact } from 'components/contact'
+import { Contact } from "components/contact";
+import { Hero } from "components/hero";
+import Layout from "components/layout";
+import { Projects } from "components/projects";
+import { Services } from "components/services";
+import { NextSeo } from "next-seo";
+import { getProjects } from "../lib/api";
+import type { Project } from "../lib/contentTypes";
 
 function Home({ preview, projects }: { preview: boolean; projects: Project[] }) {
   return (
     <Layout preview={preview}>
       <NextSeo
-        title='const NEXT - Simplify, Create, Amaze'
-        description='Professional web & app development for people and organisations that have a positive impact in the society.'
-        canonical='https://constnext.com'
+        title="const NEXT - Simplify, Create, Amaze"
+        description="Professional web & app development for people and organisations that have a positive impact in the society."
+        canonical="https://constnext.com"
         openGraph={{
-          url: 'https://constnext.com',
-          title: 'const NEXT - Simplify, Create, Amaze',
+          url: "https://constnext.com",
+          title: "const NEXT - Simplify, Create, Amaze",
           description:
-            'Professional web & app development for people and organisations that have a positive impact in the society.',
+            "Professional web & app development for people and organisations that have a positive impact in the society.",
           images: [
             {
-              url: 'https://images.ctfassets.net/voxe5faf7baw/15bf3tWfqEWQbHmMqd0Xan/49199ff6464d5c54126c1677a706c99b/cn-home.png',
+              url: "https://images.ctfassets.net/voxe5faf7baw/15bf3tWfqEWQbHmMqd0Xan/49199ff6464d5c54126c1677a706c99b/cn-home.png",
               width: 1300,
               height: 1041,
-              alt: 'const NEXT Homepage',
+              alt: "const NEXT Homepage",
             },
           ],
         }}
       />
       <Hero
         title={`Simplify,\nCreate & Amaze`}
-        description='Professional web & app development for people and organisations that have a positive impact in the society.'
+        description="Professional web & app development for people and organisations that have a positive impact in the society."
         // actionLink="/about"
       />
       <Services />
       <Projects projects={projects} cols={3} />
       <Contact />
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps({ preview = false }) {
-  const projects = await getProjects(3, preview)
+  const projects = await getProjects(3, preview);
   return {
     props: {
       preview,
       projects,
     },
-  }
+  };
 }
-export default Home
+export default Home;

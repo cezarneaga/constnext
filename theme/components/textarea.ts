@@ -1,17 +1,17 @@
-import Input from './input'
+import Input from "./input";
 
-type Dict = Record<string, any>
+type Dict = Record<string, any>;
 
 const variants = {
   flushed: (props: Dict) => Input.variants.flushed(props).field,
-}
+};
 
 const defaultProps = {
-  variant: 'flushed',
-}
+  variant: "flushed",
+};
 
 const Textarea = {
   variants,
   defaultProps,
-}
-export default Textarea
+};
+export default Textarea;

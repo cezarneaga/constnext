@@ -1,3 +1,3 @@
-export * from './Feature'
-export * from './Project'
-export * from './generic'
+export * from "./Feature";
+export * from "./generic";
+export * from "./Project";

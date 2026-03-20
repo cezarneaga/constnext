@@ -1,27 +1,28 @@
-import { getColor, mode } from '@chakra-ui/theme-tools'
+import { getColor, mode } from "@chakra-ui/theme-tools";
+
 function getDefaults(props: Record<string, any>) {
-  const { focusBorderColor: fc, errorBorderColor: ec } = props
+  const { focusBorderColor: fc, errorBorderColor: ec } = props;
   return {
-    focusBorderColor: fc || mode('brand.500', 'brand.300')(props),
-    errorBorderColor: ec || mode('red.500', 'red.300')(props),
-  }
+    focusBorderColor: fc || mode("brand.500", "brand.300")(props),
+    errorBorderColor: ec || mode("red.500", "red.300")(props),
+  };
 }
 function variantFlushed(props: Record<string, any>) {
-  const { theme } = props
-  const { focusBorderColor: fc, errorBorderColor: ec } = getDefaults(props)
+  const { theme } = props;
+  const { focusBorderColor: fc, errorBorderColor: ec } = getDefaults(props);
 
   return {
     field: {
-      boxShadow: 'none',
-      borderBottom: '1px solid',
-      borderColor: mode('gray.700', 'white')(props),
+      boxShadow: "none",
+      borderBottom: "1px solid",
+      borderColor: mode("gray.700", "white")(props),
       borderRadius: 0,
       pl: 0,
       pr: 0,
-      bg: 'transparent',
+      bg: "transparent",
       _readOnly: {
-        boxShadow: 'none !important',
-        userSelect: 'all',
+        boxShadow: "none !important",
+        userSelect: "all",
       },
       _focus: {
         borderColor: getColor(theme, fc),
@@ -32,25 +33,25 @@ function variantFlushed(props: Record<string, any>) {
         boxShadow: `0px 1px 0px 0px ${getColor(theme, ec)}`,
       },
       _placeholder: {
-        color: mode('gray.900', 'white')(props),
+        color: mode("gray.900", "white")(props),
         fontWeight: 600,
       },
     },
     addon: {
-      borderBottom: '2px solid',
-      borderColor: 'inherit',
+      borderBottom: "2px solid",
+      borderColor: "inherit",
       borderRadius: 0,
       paddingX: 0,
-      bg: 'transparent',
+      bg: "transparent",
     },
-  }
+  };
 }
-const variants = { flushed: variantFlushed }
+const variants = { flushed: variantFlushed };
 const defaultProps = {
-  variant: 'flushed',
-}
+  variant: "flushed",
+};
 const Input = {
   variants,
   defaultProps,
-}
-export default Input
+};
+export default Input;

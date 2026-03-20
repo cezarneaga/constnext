@@ -1,6 +1,5 @@
-import { Zap } from 'react-feather'
-import { Link } from '@chakra-ui/next-js'
+import { Link } from "components/chakra-link";
 
 export function Alert({ preview }: { preview: boolean }) {
-  return <>{preview && <Link href='/api/exit-preview'>Click here</Link>}</>
+  return <>{preview && <Link href="/api/exit-preview">Click here</Link>}</>;
 }

@@ -1,9 +1,10 @@
-import type { AppProps /*, AppContext */ } from 'next/app'
-import { Analytics } from '@vercel/analytics/react'
-import { ChakraProvider } from '@chakra-ui/react'
-import { DefaultSeo } from 'next-seo'
-import SEO from '../next-seo.config'
-import { customTheme } from 'theme/theme'
+import { ChakraProvider } from "@chakra-ui/react";
+import { Analytics } from "@vercel/analytics/react";
+import type { AppProps /*, AppContext */ } from "next/app";
+import { DefaultSeo } from "next-seo";
+import { customTheme } from "theme/theme";
+import SEO from "../next-seo.config";
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={customTheme}>
@@ -11,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Analytics />
     </ChakraProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

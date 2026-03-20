@@ -20,7 +20,7 @@ query ProjectList($limit: Int!) {
         }
       }
     }
-  }`
+  }`;
 export const projectsBySlugDoc = `
 query ProjectBySlug($slug: String!, $preview: Boolean!) {
     projectCollection(limit: 1, where: {slug: $slug}, preview: $preview) {
@@ -72,7 +72,7 @@ query ProjectBySlug($slug: String!, $preview: Boolean!) {
       }
     }
   }
-`
+`;
 export const moreProjectsDoc = `
   query MoreProjects($slug: String!, $limit: Int!) {
     projectCollection(
@@ -99,7 +99,7 @@ export const moreProjectsDoc = `
       }
     }
   }
-`
+`;
 export const allProjectsWithSlugsDoc = `
   query AllProjectsWithSlugs {
     projectCollection(
@@ -111,4 +111,4 @@ export const allProjectsWithSlugsDoc = `
       }
     }
   }
-`
+`;

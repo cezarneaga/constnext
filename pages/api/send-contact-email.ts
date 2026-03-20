@@ -1,14 +1,15 @@
-const { ServerClient: PostmarkClient } = require('postmark')
-const postmark = new PostmarkClient(process.env.POSTMARK_API_KEY)
-import { NextApiResponse, NextApiRequest } from 'next'
+const { ServerClient: PostmarkClient } = require("postmark");
+const postmark = new PostmarkClient(process.env.POSTMARK_API_KEY);
+
+import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function sendEmail(req: NextApiRequest, res: NextApiResponse) {
   try {
-    let { email, name, company, message } = JSON.parse(req.body)
+    const { email, name, company, message } = JSON.parse(req.body);
     await postmark.sendEmailBatchWithTemplates([
       {
         From: process.env.POSTMARK_FROM_ADDRESS,
-        To: 'cezar.neaga@hey.com',
+        To: "cezar.neaga@hey.com",
         TemplateId: process.env.POSTMARK_NEW_MESSAGE_ID,
         TemplateModel: {
           name,
@@ -16,7 +17,7 @@ export default async function sendEmail(req: NextApiRequest, res: NextApiRespons
           company,
           message,
         },
-        MessageStream: 'contactform',
+        MessageStream: "contactform",
       },
       {
         From: process.env.POSTMARK_FROM_ADDRESS,
@@ -25,12 +26,15 @@ export default async function sendEmail(req: NextApiRequest, res: NextApiRespons
         TemplateModel: {
           name,
         },
-        MessageStream: 'outbound',
+        MessageStream: "outbound",
       },
-    ])
+    ]);
 
-    res.status(200).json({ status: 200, message: 'Message sent' })
-  } catch ({ status = 500, message }: any) {
-    res.status(status as number).json({ status, message })
+    res.status(200).json({ status: 200, message: "Message sent" });
+  } catch (err) {
+    const status =
+      err instanceof Error && "status" in err ? (err as { status: number }).status : 500;
+    const message = err instanceof Error ? err.message : "Unknown error";
+    res.status(status).json({ status, message });
   }
 }

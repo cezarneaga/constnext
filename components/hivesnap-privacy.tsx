@@ -33,7 +33,7 @@ export function HivesnapPrivacy() {
             HiveSnap Privacy Policy
           </Heading>
           <Text color={mutedColor} mb={1}><strong>Effective Date:</strong> 20.03.2026</Text>
-          <Text color={mutedColor} mb={8}><strong>Last Updated:</strong> 20.03.2026</Text>
+          <Text color={mutedColor} mb={8}><strong>Last Updated:</strong> 09.04.2026</Text>
 
           {/* 1. Introduction */}
           <Heading as="h2" size="lg" color={headingColor} mt={8} mb={3}>
@@ -105,6 +105,9 @@ export function HivesnapPrivacy() {
             <ListItem>
               <strong>Usage data:</strong> App interactions, feature usage patterns, session
               duration, crash reports.
+            </ListItem>
+            <ListItem>
+              <strong>IP address:</strong> Used to infer approximate geographic location (country/region level) for security and analytics purposes. IP addresses are also received by Sentry as part of crash reports; we have configured Sentry to not store IP addresses.
             </ListItem>
             <ListItem>
               <strong>IP address:</strong> Used to infer approximate geographic location
@@ -420,8 +423,7 @@ export function HivesnapPrivacy() {
               exists.
             </ListItem>
             <ListItem>
-              <strong>Crash/analytics data:</strong> Retained for up to <strong>12 months</strong>,
-              then aggregated or deleted.
+              <strong>Crash/error data:</strong>  Retained in Sentry for up to **90 days**, then deleted. Linked to your anonymous user ID (not your email or name).
             </ListItem>
           </UnorderedList>
 

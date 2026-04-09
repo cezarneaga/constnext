@@ -272,6 +272,16 @@ export function HivesnapPrivacy() {
                     </Link>
                   </Td>
                 </Tr>
+                <Tr>
+                  <Td><strong>Sentry</strong></Td>
+                  <Td>Error monitoring & crash reporting</Td>
+                  <Td>Crash reports, device info, app version, user ID</Td>
+                  <Td>
+                    <Link href="https://sentry.io/privacy/" isExternal color="blue.500">
+                      sentry.io/privacy
+                    </Link>
+                  </Td>
+                </Tr>
               </Tbody>
             </Table>
           </TableContainer>
@@ -531,11 +541,9 @@ export function HivesnapPrivacy() {
             <ListItem>Location — city name (user-entered, not GPS)</ListItem>
             <ListItem>Identifiers — user ID, device identifier (RevenueCat)</ListItem>
             <ListItem>Purchases — transaction history, subscription status (RevenueCat)</ListItem>
+            <ListItem>Diagnostics — crash reports, error logs (linked via anonymous user ID)</ListItem>
           </UnorderedList>
           <Text color={textColor} mb={2}><strong>Data Not Linked to You:</strong></Text>
-          <UnorderedList color={textColor} spacing={1} mb={4} pl={2}>
-            <ListItem>Diagnostics — crash data, performance logs</ListItem>
-          </UnorderedList>
           <Text color={textColor} mb={2}><strong>Audio Data:</strong></Text>
           <UnorderedList color={textColor} spacing={1} mb={4} pl={2}>
             <ListItem>
